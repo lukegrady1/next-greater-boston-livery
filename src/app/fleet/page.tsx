@@ -3,8 +3,6 @@ import {
   buildBreadcrumbSchema,
   schemaToString,
   SITE_URL,
-  BUSINESS_NAME,
-  BOOKING_URL,
   OG_IMAGE_URL,
 } from '@/utils/seo'
 import { vehicles } from '@/data/vehicles'
@@ -34,19 +32,8 @@ export default function FleetPage() {
     itemListElement: vehicles.map((v, i) => ({
       '@type': 'ListItem',
       position: i + 1,
-      item: {
-        '@type': 'Product',
-        name: v.name,
-        description: v.description,
-        image: v.image,
-        offers: {
-          '@type': 'Offer',
-          url: BOOKING_URL,
-          priceCurrency: 'USD',
-          availability: 'https://schema.org/InStock',
-          seller: { '@type': 'LocalBusiness', name: BUSINESS_NAME },
-        },
-      },
+      url: `${SITE_URL}/fleet`,
+      name: v.name,
     })),
   })
 
