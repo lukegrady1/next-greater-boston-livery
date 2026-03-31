@@ -12,10 +12,10 @@ import { ServicesContent } from './services-content'
 export const metadata: Metadata = {
   title: 'Airport Transfers, Corporate & Wedding Transportation | Greater Boston Livery',
   description: 'Greater Boston Livery provides airport car service at Logan, Manchester & T.F. Green, corporate chauffeur service, wedding transportation, roadshows, and special occasions throughout New England.',
-  alternates: { canonical: `${SITE_URL}/services` },
+  alternates: { canonical: `${SITE_URL}/services/` },
   openGraph: {
     type: 'website',
-    url: `${SITE_URL}/services`,
+    url: `${SITE_URL}/services/`,
     title: 'Chauffeured Services | Greater Boston Livery',
     description: 'Airport transfers at Logan, Manchester & T.F. Green, corporate travel, weddings, roadshows, and special occasions throughout Greater Boston and New England.',
     images: [{ url: OG_IMAGE_URL, width: 1200, height: 630 }],

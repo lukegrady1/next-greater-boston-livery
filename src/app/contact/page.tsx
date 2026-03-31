@@ -14,10 +14,10 @@ import { ContactContent } from './contact-content'
 export const metadata: Metadata = {
   title: 'Book a Ride | Contact Greater Boston Livery | (855) 425-4661',
   description: 'Reserve your premium chauffeured ride with Greater Boston Livery. Book online instantly or call 1-855-GB-LIMO (855) 425-4661. Airport transfers, corporate travel, and weddings throughout Boston and New England.',
-  alternates: { canonical: `${SITE_URL}/contact` },
+  alternates: { canonical: `${SITE_URL}/contact/` },
   openGraph: {
     type: 'website',
-    url: `${SITE_URL}/contact`,
+    url: `${SITE_URL}/contact/`,
     title: 'Book a Ride | Greater Boston Livery',
     description: 'Book online or call (855) 425-4661. Airport transfers, corporate travel, weddings, and special occasions — available 24/7 in Greater Boston.',
     images: [{ url: OG_IMAGE_URL, width: 1200, height: 630 }],
@@ -31,7 +31,7 @@ export default function ContactPage() {
     '@context': 'https://schema.org',
     '@type': 'ContactPage',
     name: 'Contact Greater Boston Livery',
-    url: `${SITE_URL}/contact`,
+    url: `${SITE_URL}/contact/`,
     description: 'Book a premium chauffeured ride or contact Greater Boston Livery directly.',
     mainEntity: { '@type': 'LocalBusiness', '@id': `${SITE_URL}/#business` },
   })

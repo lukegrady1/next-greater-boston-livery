@@ -18,7 +18,7 @@ export function buildLocalBusinessSchema(reviewCount = 8) {
     name: BUSINESS_NAME,
     description:
       'Greater Boston Livery offers premium chauffeured transportation for airport transfers, corporate travel, weddings, and special occasions throughout Greater Boston and New England.',
-    url: SITE_URL,
+    url: `${SITE_URL}/`,
     telephone: PHONE,
     email: EMAIL,
     logo: LOGO_URL,
@@ -58,7 +58,7 @@ export function buildWebSiteSchema() {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     '@id': `${SITE_URL}/#website`,
-    url: SITE_URL,
+    url: `${SITE_URL}/`,
     name: BUSINESS_NAME,
     description: 'Premium chauffeured transportation serving Greater Boston and New England.',
     potentialAction: {
@@ -86,7 +86,7 @@ export function buildBreadcrumbSchema(items: BreadcrumbItem[]) {
       '@type': 'ListItem',
       position: index + 1,
       name: item.name,
-      item: `${SITE_URL}${item.href}`,
+      item: `${SITE_URL}${item.href.endsWith('/') ? item.href : `${item.href}/`}`,
     })),
   }
 }
@@ -104,7 +104,7 @@ export function buildServiceSchema(services: ServiceSchemaInput[]) {
     '@type': 'ItemList',
     name: 'Greater Boston Livery Services',
     description: 'Premium chauffeured transportation services in Greater Boston',
-    url: `${SITE_URL}/services`,
+    url: `${SITE_URL}/services/`,
     numberOfItems: services.length,
     itemListElement: services.map((service, index) => ({
       '@type': 'ListItem',

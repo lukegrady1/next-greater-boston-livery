@@ -26,10 +26,10 @@ export async function generateMetadata({
   return {
     title: service.metaTitle ?? `${service.title} | Greater Boston Livery`,
     description: service.metaDescription ?? service.description,
-    alternates: { canonical: `${SITE_URL}/services/${service.id}` },
+    alternates: { canonical: `${SITE_URL}/services/${service.id}/` },
     openGraph: {
       type: 'website',
-      url: `${SITE_URL}/services/${service.id}`,
+      url: `${SITE_URL}/services/${service.id}/`,
       title: service.metaTitle ?? service.title,
       description: service.metaDescription ?? service.description,
       images: [{ url: service.image }],
@@ -58,7 +58,7 @@ export default async function ServiceDetailPage({
   const serviceSchema = schemaToString({
     '@context': 'https://schema.org',
     '@type': 'Service',
-    '@id': `${SITE_URL}/services/${service.id}`,
+    '@id': `${SITE_URL}/services/${service.id}/`,
     name: service.title,
     description: service.description,
     provider: {
@@ -67,7 +67,7 @@ export default async function ServiceDetailPage({
       name: BUSINESS_NAME,
     },
     areaServed: { '@type': 'State', name: 'Massachusetts' },
-    url: `${SITE_URL}/services/${service.id}`,
+    url: `${SITE_URL}/services/${service.id}/`,
   })
 
   const faqSchema = service.faqs
