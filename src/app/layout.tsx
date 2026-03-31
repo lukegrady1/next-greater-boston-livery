@@ -41,6 +41,14 @@ export const metadata: Metadata = {
     description: 'Greater Boston Livery offers premium chauffeured transportation for corporate travel, weddings, and airport transfers throughout the New England area.',
     images: ['/gbl_og.webp'],
   },
+  icons: {
+    icon: [
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
+  manifest: '/site.webmanifest',
   other: {
     'geo.region': 'US-MA',
     'geo.placename': 'Boston, Massachusetts',
@@ -56,6 +64,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
+      <head>
+        <noscript>
+          <style dangerouslySetInnerHTML={{ __html: `
+            [style] {
+              opacity: 1 !important;
+              transform: none !important;
+            }
+          `}} />
+        </noscript>
+      </head>
       <body>
         <div className="relative min-h-screen">
           <ScrollToTop />

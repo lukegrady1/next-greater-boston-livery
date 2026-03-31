@@ -37,7 +37,6 @@ export default {
       animation: {
         'fade-up': 'fadeUp 0.6s ease forwards',
         'fade-in': 'fadeIn 0.4s ease forwards',
-        'cursor-expand': 'cursorExpand 0.2s ease forwards',
       },
       keyframes: {
         fadeUp: {

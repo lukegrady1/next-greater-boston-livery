@@ -21,16 +21,10 @@
 
   body {
     @apply bg-cream text-navy font-body antialiased;
-    cursor: none;
   }
 
   * {
     @apply box-border;
-  }
-
-  /* Hide default cursor globally */
-  *, *::before, *::after {
-    cursor: none !important;
   }
 }
 

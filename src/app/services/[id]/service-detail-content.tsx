@@ -1,9 +1,8 @@
 'use client'
 
-import { useState } from 'react'
 import Link from 'next/link'
 import { ArrowRight, Check, Phone, ChevronDown } from 'lucide-react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { BOOKING_URL } from '@/utils/seo'
 import { PageTransition } from '@/components/motion/PageTransition'
 import { RevealOnScroll } from '@/components/motion/RevealOnScroll'
@@ -11,38 +10,14 @@ import { StaggerChildren, StaggerItem } from '@/components/motion/StaggerChildre
 import { services } from '@/data/services'
 
 function FaqItem({ question, answer }: { question: string; answer: string }) {
-  const [open, setOpen] = useState(false)
-
   return (
-    <div className="border-b border-white/10 last:border-b-0">
-      <button
-        className="w-full flex items-center justify-between py-5 text-left gap-4"
-        onClick={() => setOpen((v) => !v)}
-        aria-expanded={open}
-      >
+    <details className="border-b border-white/10 last:border-b-0 group">
+      <summary className="flex items-center justify-between py-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden gap-4">
         <span className="font-display text-base text-cream">{question}</span>
-        <motion.div
-          animate={{ rotate: open ? 180 : 0 }}
-          transition={{ duration: 0.25 }}
-          className="flex-shrink-0"
-        >
-          <ChevronDown size={18} className="text-gold" />
-        </motion.div>
-      </button>
-      <AnimatePresence initial={false}>
-        {open && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="overflow-hidden"
-          >
-            <p className="font-body text-sm text-silver/60 leading-relaxed pb-5">{answer}</p>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
+        <ChevronDown size={18} className="text-gold flex-shrink-0 transition-transform duration-300 group-open:rotate-180" />
+      </summary>
+      <p className="font-body text-sm text-silver/60 leading-relaxed pb-5">{answer}</p>
+    </details>
   )
 }
 
