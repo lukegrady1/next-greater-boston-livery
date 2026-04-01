@@ -66,3 +66,12 @@ export const reviews: Review[] = [
     service: 'Airport Transfer',
   },
 ]
+
+export function getReviewsForService(
+  serviceType: 'airport' | 'corporate' | 'wedding' | 'general'
+): Review[] {
+  if (serviceType === 'corporate') return [reviews[2], reviews[0]]
+  if (serviceType === 'wedding') return [reviews[1], reviews[0]]
+  if (serviceType === 'airport') return [reviews[7], reviews[5]]
+  return [reviews[0], reviews[2]]
+}
