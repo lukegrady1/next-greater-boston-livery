@@ -74,6 +74,11 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link href="/locations/" className="font-body text-sm text-silver/70 hover:text-gold transition-colors">
+                  Service Areas
+                </Link>
+              </li>
             </ul>
           </div>
 

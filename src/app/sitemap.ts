@@ -1,9 +1,10 @@
 import type { MetadataRoute } from 'next'
+import { locations, VALID_SERVICE_SLUGS } from '@/data/locations'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://greaterbostonlivery.com'
 
-  return [
+  const staticPages: MetadataRoute.Sitemap = [
     { url: `${baseUrl}/`, lastModified: '2026-03-27', changeFrequency: 'monthly', priority: 1.0 },
     { url: `${baseUrl}/fleet/`, lastModified: '2026-03-27', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${baseUrl}/services/`, lastModified: '2026-03-27', changeFrequency: 'monthly', priority: 0.8 },
@@ -15,5 +16,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/services/weddings/`, lastModified: '2026-03-27', changeFrequency: 'monthly', priority: 0.9 },
     { url: `${baseUrl}/services/roadshows/`, lastModified: '2026-03-27', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${baseUrl}/services/nightlife/`, lastModified: '2026-03-27', changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/locations/`, lastModified: '2026-04-01', changeFrequency: 'monthly', priority: 0.9 },
   ]
+
+  const cityHubs: MetadataRoute.Sitemap = locations.map((loc) => ({
+    url: `${baseUrl}/${loc.slug}/`,
+    lastModified: '2026-04-01',
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  }))
+
+  const servicePages: MetadataRoute.Sitemap = locations.flatMap((loc) =>
+    VALID_SERVICE_SLUGS.map((service) => ({
+      url: `${baseUrl}/${loc.slug}/${service}/`,
+      lastModified: '2026-04-01',
+      changeFrequency: 'monthly' as const,
+      priority: 0.75,
+    }))
+  )
+
+  return [...staticPages, ...cityHubs, ...servicePages]
 }
