@@ -13,7 +13,7 @@ import { ContactContent } from './contact-content'
 
 export const metadata: Metadata = {
   title: 'Book a Ride | Contact Greater Boston Livery | (855) 425-4661',
-  description: 'Reserve your premium chauffeured ride with Greater Boston Livery. Book online instantly or call 1-855-GB-LIMO (855) 425-4661. Airport transfers, corporate travel, and weddings throughout Boston and New England.',
+  description: 'Reserve your premium chauffeured ride with Greater Boston Livery. Book online instantly or call (855) 425-4661. Airport transfers, corporate travel, and weddings throughout Boston and New England.',
   alternates: { canonical: `${SITE_URL}/contact/` },
   openGraph: {
     type: 'website',

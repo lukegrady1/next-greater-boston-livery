@@ -15,6 +15,10 @@ export type Location = {
   nearbySlugsSameRegion: string[]
   recommendedVehicles: string[]
   popularUseCase: string
+  whyChooseUs: string[]
+  neighborhoods: string[]
+  localVenues: { name: string; type: 'wedding' | 'corporate' | 'hotel' | 'event' }[]
+  cityFaqs: { question: string; answer: string }[]
 }
 
 export const RESERVED_SLUGS = [
@@ -213,6 +217,25 @@ export const locations: Location[] = [
     nearbySlugsSameRegion: ['brookline', 'waltham', 'needham', 'wellesley'],
     recommendedVehicles: ['Chrysler 300', 'Volvo S90', 'Jeep Wagoneer L'],
     popularUseCase: 'corporate executives and medical professionals commuting to Logan',
+    whyChooseUs: [
+      "Newton's affluent neighborhoods and Mass Pike access make chauffeured service a natural fit for executives commuting to Back Bay or Logan Airport. Residents of Chestnut Hill and Newton Centre regularly rely on GBL to avoid the stress of Pike traffic, especially during peak morning hours when I-90 eastbound can add 20–30 minutes to any drive.",
+      "Boston College faculty, staff, and visiting academics frequently book GBL for seamless transfers to and from campus on Commonwealth Avenue. Whether attending a conference downtown or catching an early flight, BC's community values punctuality — and a professional chauffeur who knows the difference between Newton Highlands and Newton Upper Falls.",
+      "Heartbreak Hill may be famous for marathon runners, but for Newton's corporate executives, the real challenge is navigating the Rt. 128/I-90 interchange during rush hour. GBL eliminates that friction entirely, offering door-to-door service from any Newton neighborhood to downtown Boston, the Seaport District, or Logan in a luxury vehicle.",
+    ],
+    neighborhoods: ['Newton Centre', 'Chestnut Hill', 'Newton Highlands', 'Newton Upper Falls', 'Newtonville', 'West Newton', 'Auburndale'],
+    localVenues: [
+      { name: 'Boston College (Chestnut Hill Campus)', type: 'corporate' },
+      { name: 'The Newton Marriott Hotel', type: 'hotel' },
+      { name: 'Brae Burn Country Club', type: 'wedding' },
+      { name: 'Lasell University', type: 'corporate' },
+      { name: 'The Centre at Newton Corner', type: 'event' },
+    ],
+    cityFaqs: [
+      { question: 'How long does a ride from Newton to Logan Airport typically take?', answer: 'Expect approximately 25 minutes off-peak via the Mass Pike (I-90). During weekday morning rush hour, budget 40–50 minutes. GBL monitors traffic in real time and adjusts departure times to ensure you arrive with time to spare.' },
+      { question: 'Does GBL serve all Newton villages, including Newton Upper Falls and Auburndale?', answer: 'Yes. GBL provides door-to-door pickup across all Newton villages. Whether you are in Auburndale near the Charles River or in Chestnut Hill near Route 9, a chauffeur will come directly to your address.' },
+      { question: 'What is the best route from Newton Centre to the Seaport District?', answer: 'GBL chauffeurs typically take I-90 East to the Copley/Prudential exit, then surface streets to the Seaport. The trip runs 20–30 minutes off-peak. Your driver selects the fastest real-time route each trip.' },
+      { question: 'Can GBL accommodate early morning airport pickups from Newton?', answer: 'Absolutely. GBL operates 24/7 and regularly handles 4:00–5:00 AM pickups from Newton for early Logan departures. Your chauffeur confirms the booking the evening before and tracks your flight for any schedule changes.' },
+    ],
   },
   {
     slug: 'brookline',
@@ -227,6 +250,25 @@ export const locations: Location[] = [
     nearbySlugsSameRegion: ['newton', 'cambridge', 'quincy'],
     recommendedVehicles: ['Chrysler 300', 'Black Sedan', 'Volvo S90'],
     popularUseCase: 'medical professionals and Longwood campus travelers',
+    whyChooseUs: [
+      "Brookline's proximity to the Longwood Medical Area makes GBL a go-to for physicians, researchers, and hospital administrators at Beth Israel Deaconess, Brigham and Women's, and Dana-Farber. These professionals need reliable, discreet transportation — often at irregular hours — and cannot afford to lose time circling the Longwood garage looking for a spot.",
+      "Coolidge Corner and Brookline Village residents enjoy some of the shortest airport run times in the GBL service area. At just 7 miles from Logan, a Brookline pickup typically reaches the airport in 15 minutes off-peak via the Mass Pike or Storrow Drive, making GBL an easy choice over rideshare for flights with tight check-in windows.",
+      "The Country Club and surrounding estates in south Brookline host corporate entertaining and private events year-round. GBL provides coordinated group transportation for guests arriving from downtown Boston hotels or outlying suburbs, ensuring every attendee arrives without the headache of street parking on narrow Brookline side streets.",
+    ],
+    neighborhoods: ['Coolidge Corner', 'Brookline Village', 'Longwood', 'Chestnut Hill (Brookline side)', 'Washington Square', 'Brookline Hills', 'South Brookline'],
+    localVenues: [
+      { name: 'The Country Club', type: 'wedding' },
+      { name: 'Longwood Medical Area (Beth Israel / Brigham and Women\'s)', type: 'corporate' },
+      { name: 'Hotel Buckminster', type: 'hotel' },
+      { name: 'Hellenic College Holy Cross', type: 'event' },
+      { name: 'Brookline Community Foundation Event Space', type: 'event' },
+    ],
+    cityFaqs: [
+      { question: 'How quickly can GBL get me from Brookline to Logan Airport?', answer: 'Brookline is one of the closest suburbs to Logan in the GBL network. Off-peak runs via I-90 East or the Ted Williams Tunnel take as little as 15 minutes. Rush-hour trips are scheduled with appropriate buffer time built in.' },
+      { question: 'Does GBL serve the Longwood Medical Area for hospital staff transportation?', answer: 'Yes. GBL regularly serves Longwood Medical Area for physician pickups, hospital administrator transfers, and medical conference transportation. Chauffeurs are familiar with the complex entry points at BIDMC, Brigham and Women\'s, and Dana-Farber Cancer Institute.' },
+      { question: 'Can I get a chauffeured car from Coolidge Corner to South Station or Back Bay?', answer: 'Yes. GBL handles all downtown Boston transfers from Brookline, including South Station, Back Bay, and the Financial District. These rides typically run 10–20 minutes depending on traffic and time of day.' },
+      { question: 'Is GBL available for events at The Country Club in Brookline?', answer: 'Absolutely. GBL coordinates group arrivals and departures for weddings, member events, and private functions at The Country Club. Fleet vehicles ranging from sedans to SUVs and vans can be arranged for multi-guest logistics.' },
+    ],
   },
   {
     slug: 'cambridge',
@@ -241,6 +283,25 @@ export const locations: Location[] = [
     nearbySlugsSameRegion: ['brookline', 'newton', 'waltham'],
     recommendedVehicles: ['Volvo S90', 'Chrysler 300', 'Black SUV'],
     popularUseCase: 'biotech executives, university guests, and conference travelers',
+    whyChooseUs: [
+      "Cambridge is one of the most intellectually dense corridors in the world, and its residents — Harvard professors, MIT researchers, Kendall Square biotech executives — expect the same precision from their transportation that they apply to their work. GBL provides a reliable, quiet environment to review a presentation or decompress after a board meeting, door to door from any Cambridge address.",
+      "Kendall Square's biotech and venture capital community depends on GBL for airport runs, investor meetings in the Seaport, and multi-stop corporate itineraries across the Route 128 corridor. Parking in Kendall is nearly impossible, and the ride from Kendall Square to Logan via the Sumner Tunnel typically takes just 15 minutes — making GBL the obvious professional choice.",
+      "Harvard Square and the surrounding residential neighborhoods of Agassiz and Mid-Cambridge host visiting scholars, university donors, and senior administrators who require seamless ground transport. GBL chauffeurs know exactly where to stage outside Harvard's busy event venues and how to navigate Memorial Drive and Cambridge Street during high-traffic periods.",
+    ],
+    neighborhoods: ['Kendall Square', 'Harvard Square', 'Inman Square', 'Central Square', 'Porter Square', 'Mid-Cambridge', 'East Cambridge', 'Agassiz'],
+    localVenues: [
+      { name: 'MIT (Kendall Square / Main Campus)', type: 'corporate' },
+      { name: 'Harvard University (Cambridge Campus)', type: 'corporate' },
+      { name: 'The Royal Sonesta Boston (Cambridge)', type: 'hotel' },
+      { name: 'Marriott Cambridge', type: 'hotel' },
+      { name: 'Broad Institute of MIT and Harvard', type: 'corporate' },
+    ],
+    cityFaqs: [
+      { question: 'How far is Cambridge from Logan Airport, and how long does the ride take?', answer: 'Cambridge is approximately 5 miles from Logan. Off-peak rides via the Sumner or Ted Williams Tunnel take 12–18 minutes. GBL monitors tunnel traffic in real time and picks the fastest route for every trip.' },
+      { question: 'Can GBL pick up from MIT or Harvard for corporate and academic travel?', answer: 'Yes. GBL regularly serves both campuses for faculty, administrators, and visiting speakers. Chauffeurs know designated pickup zones at MIT\'s Kendall Square buildings and Harvard\'s main yard and business school campus.' },
+      { question: 'Does GBL serve Cambridge for early morning or late night rides?', answer: 'GBL operates 24 hours a day, 7 days a week. Late-night rides from Cambridge bars or restaurants to suburban destinations, and pre-dawn airport runs from Inman Square or Porter Square, are all standard bookings.' },
+      { question: 'What Cambridge neighborhoods does GBL cover?', answer: 'GBL covers all Cambridge neighborhoods including Kendall Square, Harvard Square, Central Square, Inman Square, Porter Square, East Cambridge, and Mid-Cambridge. Any Cambridge address qualifies for door-to-door pickup.' },
+    ],
   },
   {
     slug: 'waltham',
@@ -255,6 +316,25 @@ export const locations: Location[] = [
     nearbySlugsSameRegion: ['newton', 'lexington', 'cambridge'],
     recommendedVehicles: ['Chrysler 300', 'Volvo S90', 'GMC Yukon'],
     popularUseCase: 'Route 128 tech corridor corporate travel',
+    whyChooseUs: [
+      "Waltham's Route 128 tech corridor is home to some of the most active corporate campuses in Greater Boston, including Raytheon Technologies, Brandeis University, and dozens of biotech and defense firms. GBL serves this corridor daily, providing executives with punctual, professional ground transportation between campus offices, downtown Boston meetings, and Logan Airport.",
+      "The Waltham Watch Factory and neighboring innovation district have transformed the city's riverfront into a hub for startups and creative firms. Employees and visitors to this district rely on GBL to bridge the gap between Waltham's limited commuter rail service and the dense corporate activity happening along the Charles River — especially for client-facing trips that demand a polished arrival.",
+      "Brandeis University faculty, visiting scholars, and senior administrators regularly book GBL for transfers to Boston Logan, T.F. Green in Providence, and Manchester-Boston Regional Airport. Waltham's position midway between the Mass Pike and I-93 makes GBL routing highly flexible, whether the destination is the Seaport District or a Route 128 campus in Woburn.",
+    ],
+    neighborhoods: ['Waltham Center', 'Watch City District', 'Prospect Hill', 'Lakeview', 'South Waltham', 'Piety Corner', 'Cedarwood'],
+    localVenues: [
+      { name: 'Raytheon Technologies (Waltham HQ)', type: 'corporate' },
+      { name: 'Brandeis University', type: 'corporate' },
+      { name: 'The Westin Waltham-Boston', type: 'hotel' },
+      { name: 'Waltham Watch Factory (Event Space)', type: 'event' },
+      { name: 'Gore Place Estate', type: 'wedding' },
+    ],
+    cityFaqs: [
+      { question: 'How long does it take to get from Waltham to Logan Airport with GBL?', answer: 'The typical Waltham-to-Logan run takes 28–35 minutes via I-95 to the Mass Pike eastbound. GBL builds in adequate buffer time based on your flight and adjusts departure recommendations based on real-time traffic conditions.' },
+      { question: 'Does GBL serve the Route 128 corporate campuses in Waltham?', answer: 'Yes. GBL is a preferred ground transportation provider for multiple Route 128 tech and defense campuses. Drivers know the access roads and gatehouse procedures for major employers and can coordinate multi-passenger pickups.' },
+      { question: 'Can GBL transport guests to events at Gore Place or the Watch Factory?', answer: 'Absolutely. GBL handles event transportation for weddings and corporate functions at Gore Place and the Waltham Watch Factory. Multi-vehicle coordination and shuttle-style runs between a hotel and the venue are available.' },
+      { question: 'Is GBL a good option for Waltham residents who use Logan for frequent business travel?', answer: 'GBL is ideal for frequent flyers based in Waltham. We offer account billing, consistent chauffeurs who learn your preferences, and flight tracking on every booking — eliminating the uncertainty of rideshare for time-sensitive business travel.' },
+    ],
   },
   {
     slug: 'wellesley',
@@ -269,6 +349,25 @@ export const locations: Location[] = [
     nearbySlugsSameRegion: ['needham', 'newton', 'waltham'],
     recommendedVehicles: ['Chrysler 300', 'Jeep Wagoneer L', '10 Passenger White Stretch Limousine'],
     popularUseCase: 'luxury airport transfers and wedding transportation',
+    whyChooseUs: [
+      "Wellesley is one of the most sought-after residential communities in Greater Boston, and its residents expect a corresponding level of service from their ground transportation. GBL's fleet of late-model luxury vehicles and formally dressed chauffeurs aligns naturally with Wellesley's standards — whether the trip is a morning run to Logan or an evening arrival for guests visiting Wellesley College.",
+      "Wellesley College and Babson College generate consistent demand for executive and academic transportation along Route 9 and the Mass Pike corridor. Visiting trustees, guest lecturers, and corporate partners of Babson's entrepreneurship programs rely on GBL to ensure arrivals are professional and on time, without the unpredictability of app-based rideshare services.",
+      "Lake Waban and the Wellesley Hills neighborhood attract high-net-worth residents who entertain frequently and require discreet, coordinated transportation for private events. GBL's experience with estate pickups, multi-vehicle wedding logistics, and late-night event returns makes it the trusted choice for Wellesley households that prioritize privacy and reliability.",
+    ],
+    neighborhoods: ['Wellesley Hills', 'Wellesley Farms', 'Wellesley Square', 'Natick border (Wellesley side)', 'Lake Waban area', 'Cliff Estates', 'Dana Hall area'],
+    localVenues: [
+      { name: 'Wellesley College', type: 'corporate' },
+      { name: 'Babson College', type: 'corporate' },
+      { name: 'Wellesley Country Club', type: 'wedding' },
+      { name: 'The Verve Hotel (Natick/Wellesley area)', type: 'hotel' },
+      { name: 'Dana Hall School (Event Venue)', type: 'event' },
+    ],
+    cityFaqs: [
+      { question: 'How long is the drive from Wellesley to Logan Airport?', answer: 'Wellesley to Logan runs approximately 30–40 minutes via I-90 East. GBL recommends departure times based on your terminal, airline, and real-time traffic — ensuring you arrive at least 90 minutes before domestic flights.' },
+      { question: 'Does GBL offer service to Wellesley College and Babson College for visiting guests?', answer: 'Yes. GBL regularly transports trustees, guest speakers, and corporate partners to both Wellesley College and Babson College. Chauffeurs know campus entry points and can coordinate arrivals for events, ceremonies, and board meetings.' },
+      { question: 'Can GBL handle multi-stop itineraries in the Wellesley and Route 9 corridor?', answer: 'Absolutely. GBL offers hourly charter service for multi-stop corporate itineraries along Route 9, the Mass Pike corridor, and into downtown Boston. Billing is by the hour with no hidden stop fees.' },
+      { question: 'Is GBL available for wedding transportation from venues in Wellesley?', answer: 'Yes. GBL coordinates full wedding-day transportation from Wellesley, including bridal party vehicles, guest shuttles, and after-party returns. We work with your venue coordinator to build a precise timeline well in advance.' },
+    ],
   },
   {
     slug: 'needham',
@@ -283,6 +382,25 @@ export const locations: Location[] = [
     nearbySlugsSameRegion: ['wellesley', 'newton', 'brookline'],
     recommendedVehicles: ['Chrysler 300', 'Volvo S90', 'Black Sedan'],
     popularUseCase: 'frequent business travelers and airport transfers',
+    whyChooseUs: [
+      "Needham's professional community — concentrated along Highland Avenue and the I-95 corridor — relies on GBL for dependable airport transportation that fits a demanding work schedule. The town's easy highway access via Route 128 and I-95 makes Logan runs efficient, and GBL chauffeurs know how to time departures to avoid the bottleneck at the I-95/Route 9 interchange.",
+      "Unlike some inner suburbs, Needham is quiet and residential, which means residents genuinely appreciate a luxury car arrival rather than a rideshare with an uncertain driver experience. GBL delivers consistency: the same caliber of vehicle and professionalism every time, whether the pickup is from Town Center or from a home near Cutler Park along the Charles River.",
+      "Needham's proximity to Dedham, Wellesley, and the Route 128 belt makes it a natural staging point for GBL's corporate accounts in the southwest suburban corridor. Business travelers based in Needham who regularly connect through Logan, T.F. Green, or Manchester find GBL's flat-rate pricing and account management far more predictable than surge-priced rideshare alternatives.",
+    ],
+    neighborhoods: ['Needham Center', 'Needham Heights', 'Charles River Village', 'Highrock', 'Sunningdale', 'Bird Hill', 'South Needham'],
+    localVenues: [
+      { name: 'Needham Bank Corporate Headquarters', type: 'corporate' },
+      { name: 'Hamilton on the Bay (nearby Dedham)', type: 'wedding' },
+      { name: 'Crowne Plaza Boston-Natick (proximate)', type: 'hotel' },
+      { name: 'Cutler Park Reservation Event Area', type: 'event' },
+      { name: 'Needham Country Club', type: 'wedding' },
+    ],
+    cityFaqs: [
+      { question: 'What is the typical drive time from Needham to Logan Airport?', answer: 'Needham to Logan takes approximately 28–38 minutes via I-95 North to I-90 East, depending on traffic. GBL factors in real-time conditions and your flight departure time when recommending when your chauffeur should arrive.' },
+      { question: 'Does GBL pick up from residential neighborhoods throughout Needham?', answer: 'Yes. GBL provides door-to-door service from every Needham neighborhood, including Needham Heights, Charles River Village, and Bird Hill. There is no centralized pickup location — your chauffeur meets you at your front door.' },
+      { question: 'Can GBL take me from Needham to South Station or Back Bay for commuter rail?', answer: 'Yes. GBL handles transfers from Needham to Back Bay, South Station, and North Station for clients who connect to Amtrak or commuter rail. These rides typically run 25–35 minutes and can be scheduled in advance.' },
+      { question: 'Is GBL a reliable option for Needham residents who travel frequently for work?', answer: 'GBL is an excellent fit for frequent business travelers in Needham. We offer corporate accounts with consolidated billing, consistent vehicle standards, and flight tracking on every airport run — far more reliable than on-demand rideshare for time-sensitive trips.' },
+    ],
   },
   {
     slug: 'lexington',
@@ -297,6 +415,26 @@ export const locations: Location[] = [
     nearbySlugsSameRegion: ['waltham', 'cambridge', 'newton'],
     recommendedVehicles: ['Chrysler 300', 'Volvo S90', 'GMC Yukon'],
     popularUseCase: 'Hartwell Avenue tech professionals and business travelers',
+    whyChooseUs: [
+      "Lexington's Hartwell Avenue technology campus is one of the most concentrated clusters of defense, biotech, and engineering firms in the state, housing companies like Thermo Fisher Scientific and Watts Water Technologies. GBL serves this corridor daily, providing executives with professional ground transport to Hanscom Field, Logan Airport, and downtown Boston without the frustration of Route 128 congestion.",
+      "Residents of historic Lexington — many of them senior professionals and frequent flyers — appreciate that GBL's level of service matches the town's character. From Battle Green to the quiet streets near Minute Man National Historical Park, GBL pickups are discreet, on time, and exactly what a community of this caliber expects from a chauffeured car service.",
+      "Lexington's distance from Boston (roughly 18 miles) makes the economics of GBL clear: at 30–35 minutes to Logan, a flat-rate chauffeured ride offers more value than airport parking at $40+ per day for multi-day trips. Corporate travelers and families heading on extended vacations alike find GBL's model straightforward — book, ride, return.",
+    ],
+    neighborhoods: ['Lexington Center', 'East Lexington', 'Hastings', 'Munroe', 'Fiske', 'Hartwell Avenue Corridor', 'Lincoln Street area'],
+    localVenues: [
+      { name: 'Hartwell Avenue Tech Campus (Thermo Fisher / Watts Water)', type: 'corporate' },
+      { name: 'Minute Man National Historical Park Visitor Center', type: 'event' },
+      { name: 'Sheraton Lexington Hotel', type: 'hotel' },
+      { name: 'Battle Green Inn', type: 'hotel' },
+      { name: 'Lexington Venue at the Scottish Rite Masonic Museum', type: 'wedding' },
+    ],
+    cityFaqs: [
+      { question: 'How long does GBL take to get from Lexington to Logan Airport?', answer: 'The standard Lexington-to-Logan route via I-95 South to I-90 East takes approximately 32–42 minutes off-peak. GBL sets departure times based on your flight terminal, real-time traffic, and any construction delays on the Route 128 interchange.' },
+      { question: 'Does GBL serve the Hartwell Avenue corporate campus in Lexington?', answer: 'Yes. GBL is familiar with all major buildings along Hartwell Avenue and handles executive pickups, visitor transfers, and multi-stop corporate days for the tech and defense firms based there. Drivers know campus access procedures.' },
+      { question: 'Can GBL transport visiting guests to Lexington for historical or academic events?', answer: 'Absolutely. GBL regularly brings visitors from Logan Airport or Boston hotels to Lexington Center and Minute Man National Historical Park for tours, ceremonies, and private events. Round-trip scheduling is available.' },
+      { question: 'Is there a GBL flat rate from Lexington to downtown Boston?', answer: 'Yes. GBL offers flat-rate pricing for all standard routes from Lexington, including trips to the Financial District, Seaport, Back Bay, and Cambridge. Contact GBL for a quote — there are no surge prices or hidden fees.' },
+      { question: 'Can GBL handle early morning pickups from Lexington for 6 AM or earlier flights?', answer: 'Yes. GBL operates around the clock. Early morning pickups from Lexington for 6 AM departures typically require a 4:00–4:30 AM vehicle arrival. GBL confirms the booking the night before and your chauffeur tracks your flight status.' },
+    ],
   },
   {
     slug: 'quincy',
@@ -311,6 +449,25 @@ export const locations: Location[] = [
     nearbySlugsSameRegion: ['brookline', 'needham', 'wellesley'],
     recommendedVehicles: ['Chrysler 300', 'Black Sedan', 'Black SUV'],
     popularUseCase: 'airport transfers for South Shore commuters and business travelers',
+    whyChooseUs: [
+      "Quincy residents rely on chauffeured service for the daily reality of South Shore commuting — whether avoiding the Southeast Expressway crawl from Quincy Center or getting to Logan without the stress of long-term parking fees. With employers like Beth Israel Deaconess Hospital and major financial firms in the Quincy Adams corridor, professionals here treat airport runs as a workday extension.",
+      "Wollaston, Marina Bay, and Squantum residents frequently book GBL for early departures out of Logan, knowing Route 3A and the Expressway can turn a 20-minute drive into an hour by 7am. A flat-rate, door-to-door pickup removes that uncertainty entirely — and for families heading to international terminals, it means no circling the cell phone lot.",
+      "Quincy's proximity to both Logan Airport and the South Shore's wedding circuit makes it a natural hub for event transportation. From ceremonies near Adams National Historical Park to receptions further down the South Shore, our vehicles handle the full picture — including guest shuttles from Quincy Center MBTA to coastal venues.",
+    ],
+    neighborhoods: ['Quincy Center', 'Wollaston', 'Marina Bay', 'Squantum', 'Merrymount', 'North Quincy', 'Quincy Point', 'Germantown'],
+    localVenues: [
+      { name: 'Granite Links Golf Club', type: 'wedding' },
+      { name: 'DoubleTree by Hilton Boston-Milton', type: 'hotel' },
+      { name: 'Presidents Place (Quincy Center)', type: 'corporate' },
+      { name: 'Adams National Historical Park', type: 'event' },
+      { name: 'Marina Bay Event Center', type: 'event' },
+    ],
+    cityFaqs: [
+      { question: 'How long does it take to get from Quincy to Logan Airport?', answer: 'Under normal conditions, expect 18–25 minutes from central Quincy to Logan. Morning rush hour on the Southeast Expressway can push that to 40–50 minutes, which is exactly why a professional driver who monitors traffic in real time is worth it.' },
+      { question: 'Do you offer early morning pickups in Quincy for 4am or 5am departures?', answer: 'Absolutely. We accommodate pre-dawn departures all across Quincy, including Marina Bay, Wollaston, and North Quincy. No surge pricing, no last-minute cancellations — your chauffeur is confirmed and on time.' },
+      { question: 'Can GBL handle wedding guest shuttles from Quincy MBTA stops?', answer: 'Yes. We regularly coordinate shuttle runs from Quincy Center and North Quincy Red Line stations to South Shore wedding venues, making sure out-of-town guests arrive together and on schedule.' },
+      { question: 'Is Quincy a good base for reaching both Logan and Providence airports?', answer: 'Logan is the obvious choice from Quincy at roughly 18 miles. Providence is about 55 minutes south, and can offer better fares on certain routes — our drivers know both runs well.' },
+    ],
   },
   {
     slug: 'hingham',
@@ -327,6 +484,25 @@ export const locations: Location[] = [
     nearbySlugsSameRegion: ['marshfield', 'plymouth', 'duxbury'],
     recommendedVehicles: ['Chrysler 300', 'Volvo S90', 'Jeep Wagoneer L'],
     popularUseCase: 'executive airport transfers and special occasion transportation',
+    whyChooseUs: [
+      "Hingham's commuter profile is distinctly high-demand — executives and professionals who take the MBTA Commuter Boat from Hingham Shipyard into Rowes Wharf also frequently need ground transportation for early morning flights, client events, and corporate retreats. GBL bridges that gap: a seamless sedan pickup from your home near World's End or South Shore Country Club, straight to any terminal at Logan.",
+      "The Derby Street Shops corridor and Hingham Centre neighborhoods have a strong base of frequent travelers who value consistency. When your 6:15am departure out of Logan Terminal E doesn't allow for parking gambles or rideshare no-shows, a confirmed luxury vehicle from your driveway on a Monday morning is simply the right call. Our Hingham clients often book recurring weekly service.",
+      "Hingham is also one of the premier South Shore destinations for upscale weddings, with venues like Oakes Ames Memorial Hall and events at private estates near Hingham Harbor drawing guests from across New England. We provide both bridal party transportation and multi-vehicle guest coordination, ensuring everyone arrives — and departs — with the same level of care.",
+    ],
+    neighborhoods: ['Hingham Centre', 'Hingham Shipyard', 'South Hingham', 'North Hingham', 'Crow Point', 'East Hingham', "World's End"],
+    localVenues: [
+      { name: 'Oakes Ames Memorial Hall', type: 'wedding' },
+      { name: 'South Shore Country Club', type: 'event' },
+      { name: 'Derby Street Shops (corporate events)', type: 'corporate' },
+      { name: 'Hingham Shipyard Marriott (adjacent)', type: 'hotel' },
+      { name: "World's End (private estate events)", type: 'wedding' },
+    ],
+    cityFaqs: [
+      { question: 'How far is Hingham from Logan Airport, and what is the best route?', answer: 'Hingham is approximately 22 miles from Logan, typically 35–45 minutes depending on time of day. We use Route 3A to the expressway or the Southeast Expressway via Braintree — your driver selects the optimal route based on live traffic.' },
+      { question: 'Does GBL serve the Hingham Shipyard area for early morning pickups?', answer: 'Yes. Hingham Shipyard is one of our regular pickup zones. Whether you are catching a flight or heading to a South Boston office, we will have a vehicle at your building entrance at whatever hour you need.' },
+      { question: 'Can GBL also take me to Providence Airport from Hingham?', answer: 'Absolutely. Providence TF Green is about 50 miles south of Hingham — roughly 50–60 minutes. For travelers finding better fares out of PVD, we make that run regularly and it is a comfortable, stress-free alternative.' },
+      { question: 'Do you handle wedding transportation for venues near Hingham Harbor?', answer: 'We do. Hingham Harbor and surrounding estates are popular for South Shore weddings. We coordinate bridal party vehicles, guest shuttles, and post-reception rides — all with a single point of contact and consistent scheduling.' },
+    ],
   },
   {
     slug: 'plymouth',
@@ -343,6 +519,25 @@ export const locations: Location[] = [
     nearbySlugsSameRegion: ['duxbury', 'marshfield', 'hingham'],
     recommendedVehicles: ['Chrysler 300', 'GMC Yukon', 'Ford Expedition MAX XLT'],
     popularUseCase: 'airport transfers and wedding transportation',
+    whyChooseUs: [
+      "Plymouth's position as both a historic tourism destination and a year-round residential community creates a unique transportation demand. Summer visitors heading to Plimoth Patuxent, Plymouth Rock, and the Mayflower II often book GBL for group arrivals from Logan or Cape Cod, while year-round residents in the Manomet and Cedarville neighborhoods need reliable service for flights out of Logan that is worth the 45-minute drive.",
+      "Route 3 is Plymouth's lifeline to Boston, and while it flows well at off-peak hours, the morning merge toward Braintree and the summer weekend backup toward the Cape make self-driving a genuine stress point. Our Plymouth clients consistently cite traffic unpredictability as their primary reason for booking — a professional driver takes that off the table and restores the ride as productive time.",
+      "Plymouth is increasingly a destination for milestone events — waterfront gatherings, corporate retreats, and rehearsal dinners near Plymouth Harbor attract attendees from across the region. GBL regularly manages multi-stop pickup routes from Boston hotels into Plymouth event venues, and coordinates return transportation after late-night harborfront dinners or summer sunset cruises.",
+    ],
+    neighborhoods: ['Plymouth Center', 'Manomet', 'Cedarville', 'North Plymouth', 'West Plymouth', 'Ellisville', 'White Horse Beach'],
+    localVenues: [
+      { name: 'Plimoth Patuxent', type: 'event' },
+      { name: 'John Carver Inn & Spa', type: 'hotel' },
+      { name: 'Plymouth Yacht Club', type: 'event' },
+      { name: 'Westwind Premiere (event venue)', type: 'wedding' },
+      { name: 'Plymouth Industrial Park (corporate)', type: 'corporate' },
+    ],
+    cityFaqs: [
+      { question: 'How long is the drive from Plymouth to Logan Airport?', answer: "Plan on 45–55 minutes from Plymouth Center under normal conditions. Summer Friday afternoons and Monday mornings on Route 3 can add significant time — booking a chauffeur means that delay is your driver's problem, not yours." },
+      { question: 'Does GBL serve Plymouth for Providence Airport trips as well as Logan?', answer: 'Yes. Providence TF Green is roughly 45 minutes from Plymouth and a genuine alternative, especially for Southwest and other carriers with strong PVD routes. We are equally comfortable with both airports.' },
+      { question: 'Can you handle group transportation for events at Plymouth waterfront venues?', answer: 'Absolutely. We regularly move groups of 4–20+ guests between Boston or South Shore hotels and Plymouth Harbor venues. Multiple vehicles can be coordinated to run concurrently, ensuring no one waits at the end of the night.' },
+      { question: 'Do you pick up from Plymouth hotels for Logan Airport departures?', answer: "Yes — John Carver Inn and other Plymouth accommodations are standard pickup locations for us. For hotel guests with early departures, we will be outside the lobby at the agreed time, every time." },
+    ],
   },
   {
     slug: 'duxbury',
@@ -359,6 +554,25 @@ export const locations: Location[] = [
     nearbySlugsSameRegion: ['marshfield', 'plymouth', 'hingham'],
     recommendedVehicles: ['Chrysler 300', 'Volvo S90', 'Jeep Wagoneer L'],
     popularUseCase: 'luxury airport transfers and wedding parties',
+    whyChooseUs: [
+      "Duxbury is one of the South Shore's most sought-after communities, and its residents reflect that — executives, physicians, and frequent flyers who need reliable airport service from a town where rideshare coverage can be genuinely sparse. From homes along Powder Point Road or Bay Road overlooking Duxbury Bay, a confirmed GBL pickup eliminates the gamble of uncertain app-based drivers at 4:30 in the morning.",
+      "The seasonal nature of Duxbury's beach community means summer is peak for both airport transfers and event transportation. Guests arriving for weddings near Duxbury or King Caesar House events often fly into Logan and need ground transport directly to the South Shore — our drivers know the Route 3 / Exit 11 approach cold, and we monitor arrivals in real time so we are there when the bags come off.",
+      "Duxbury has quietly become one of the most active wedding markets on the South Shore, with private estate venues and waterfront properties drawing celebrations from across New England. GBL provides white-glove bridal party transportation, multi-vehicle guest coordination from Boston-area hotels, and end-of-night rides that match the elegance of the day itself.",
+    ],
+    neighborhoods: ['Duxbury Village', 'Powder Point', 'Snug Harbor', 'Surplus Street area', 'South Duxbury', 'Island Creek', 'Duck Hill'],
+    localVenues: [
+      { name: 'King Caesar House', type: 'wedding' },
+      { name: 'Duxbury Bay Maritime School (events)', type: 'event' },
+      { name: 'Powder Point Bridge area (estate weddings)', type: 'wedding' },
+      { name: 'South Shore Country Club (nearby Hingham)', type: 'event' },
+      { name: 'Duxbury Beach Reservation events', type: 'event' },
+    ],
+    cityFaqs: [
+      { question: 'How far is Duxbury from Logan Airport, and what should I expect for drive time?', answer: "Duxbury is about 38 miles from Logan — typically 42–55 minutes. Early morning departures before 6am often run closer to 40 minutes. We build in buffer time automatically and track your flight so we are never caught off-guard." },
+      { question: 'Is GBL available for late-night pickups in Duxbury after events?', answer: 'Yes. Late-night event pickups in Duxbury, including returns from Boston or South Shore venues, are a regular part of our service. No surge pricing, no cancellations — your driver is confirmed before the night begins.' },
+      { question: 'Do you handle wedding transportation for estate venues in Duxbury?', answer: 'We specialize in it. Duxbury estate and waterfront weddings often require multi-vehicle coordination from different pickup points. We work directly with your planner to ensure seamless arrivals, departures, and guest shuttle timing.' },
+      { question: 'Can you take me to Providence Airport from Duxbury instead of Logan?', answer: "Duxbury to PVD is roughly 47 miles — about 50 minutes in normal traffic. For flights on airlines with strong Providence schedules, it is a legitimate option and we are glad to make the run." },
+    ],
   },
   {
     slug: 'marshfield',
@@ -373,6 +587,25 @@ export const locations: Location[] = [
     nearbySlugsSameRegion: ['duxbury', 'plymouth', 'hingham'],
     recommendedVehicles: ['Chrysler 300', 'Black SUV', 'GMC Yukon'],
     popularUseCase: 'early morning airport departures and holiday travel',
+    whyChooseUs: [
+      "Marshfield sits in a sweet spot on Route 3 — far enough from Boston to feel genuinely coastal, close enough to make Logan a practical option for frequent travelers. Residents in Marshfield Hills, Green Harbor, and the neighborhoods near the Marshfield Fairgrounds consistently tell us that rideshare reliability in this part of Plymouth County falls apart at exactly the moments it matters most: 4am airport runs, holiday travel weekends, and after-event returns in the dark.",
+      "Route 3 from Marshfield is straightforward and predictable during off-peak hours, which is one reason early morning travelers book GBL — you can time the trip with confidence. For a 6:30am Logan departure, a 5:15am pickup from Green Harbor gets you there with time for security and coffee. Our drivers know every mile of that corridor and plan accordingly when summer traffic complicates the return leg.",
+      "Marshfield's year-round community includes a meaningful number of Boston commuters and remote professionals who travel for work on a regular basis. Several clients maintain standing weekly bookings — particularly those flying out Sunday night and returning Thursday. It is a simple arrangement: consistent vehicle, consistent driver, no thinking required on either end of a travel week.",
+    ],
+    neighborhoods: ['Marshfield Hills', 'Green Harbor', 'Brant Rock', 'Rexhame', 'Fieldston', 'Ocean Bluff', 'South Marshfield'],
+    localVenues: [
+      { name: 'Marshfield Fairgrounds', type: 'event' },
+      { name: 'Rexhame Beach (private events)', type: 'event' },
+      { name: 'Green Harbor Marina area', type: 'event' },
+      { name: 'Levitate Music & Arts Festival site', type: 'event' },
+      { name: 'South Shore corporate parks (Norwell/Hanover adjacent)', type: 'corporate' },
+    ],
+    cityFaqs: [
+      { question: 'What is the typical drive time from Marshfield to Logan Airport?', answer: 'Plan on 40–50 minutes from central Marshfield under normal conditions. The Route 3 merge at Braintree can add time during peak hours. We track real-time traffic and adjust departure times accordingly to ensure you arrive with margin.' },
+      { question: 'Does GBL offer early morning pickups from Marshfield for 5am or earlier?', answer: 'Yes — early morning service is one of our most requested runs from Marshfield. We confirm your pickup the night before and your driver is on-site at the agreed time, no uncertainty and no surge pricing.' },
+      { question: 'Can you pick up from Brant Rock or Green Harbor for airport departures?', answer: 'Absolutely. Brant Rock, Green Harbor, and Rexhame are all standard pickup locations. Coastal Marshfield addresses are no problem — we come to your door regardless of how far off the main road you are.' },
+      { question: 'Is Marshfield far enough from Logan that Providence Airport makes more sense?', answer: 'For some routes, yes. Providence is roughly 55 miles from Marshfield — similar drive time to Logan but with less traffic variability. We serve both airports equally and can help you think through which makes more sense for your itinerary.' },
+    ],
   },
   {
     slug: 'salem',
@@ -387,6 +620,25 @@ export const locations: Location[] = [
     nearbySlugsSameRegion: ['newburyport', 'gloucester'],
     recommendedVehicles: ['Chrysler 300', 'Black Sedan', 'Volvo S90'],
     popularUseCase: 'airport transfers and special occasion transportation',
+    whyChooseUs: [
+      "Salem professionals commuting to Boston increasingly rely on chauffeured car service to reclaim the 32-minute drive on Route 128 or the congested Rt. 1A corridor. With major employers like Salem Hospital, Analogic Corporation, and a growing North Shore tech presence, executives depend on reliable pre-dawn airport runs from the McIntyre District and Gallows Hill neighborhoods.",
+      "Salem's year-round tourism economy — peaking dramatically every October — creates unique transportation demands. Wedding parties heading from ceremonies near Derby Wharf, corporate groups visiting the Peabody Essex Museum, and Witch City weekenders needing seamless Logan pickups all benefit from a professional chauffeur who knows the tight historic street grid around Essex and Derby Streets.",
+      "For Salem residents near the waterfront or in the Mack Park and South Salem areas, parking at Logan is an unnecessary expense when a door-to-door luxury sedan costs less than a week in an airport garage. Chauffeured service also eliminates the stress of navigating the Callahan Tunnel at peak hours after a long flight home.",
+    ],
+    neighborhoods: ['McIntyre District', 'Derby Wharf Area', 'Gallows Hill', 'South Salem', 'Mack Park', 'North Salem', 'The Point Neighborhood'],
+    localVenues: [
+      { name: 'Peabody Essex Museum', type: 'corporate' },
+      { name: 'Ledger Restaurant & Bar', type: 'event' },
+      { name: 'Hawthorne Hotel', type: 'hotel' },
+      { name: "Turner's Seafood at Ledge", type: 'event' },
+      { name: 'Salem Waterfront Hotel & Suites', type: 'wedding' },
+    ],
+    cityFaqs: [
+      { question: 'How long does a chauffeured ride from Salem to Logan Airport take?', answer: 'Under normal conditions, expect approximately 32–40 minutes from downtown Salem to Logan Terminal. We monitor real-time traffic on Route 128 and Route 1A and adjust pickup times accordingly, always building in buffer for the Ted Williams or Callahan Tunnel approach.' },
+      { question: "Can Greater Boston Livery handle large group pickups during Salem's October Haunted Happenings festival?", answer: 'Absolutely. We pre-position vehicles and coordinate staging away from congested Essex Street during high-traffic October weekends. SUVs and vans accommodate groups arriving or departing from hotels like the Hawthorne or the Salem Waterfront Hotel.' },
+      { question: 'Do you offer early-morning pickups from Salem for Logan flights?', answer: 'Yes — we offer 24/7 service with no early-morning surcharge. Many Salem executives with 6 AM departures schedule 3:45–4:15 AM pickups. Your chauffeur arrives at your Salem address; you never hunt for parking at Logan.' },
+      { question: 'What is the best route from Salem to Boston for avoiding traffic?', answer: 'We typically use Route 128 South to I-93 for peak hours, or Route 1A South through Revere for off-peak runs. Our drivers know both corridors intimately and select the fastest option based on live conditions at your departure time.' },
+    ],
   },
   {
     slug: 'newburyport',
@@ -403,6 +655,25 @@ export const locations: Location[] = [
     nearbySlugsSameRegion: ['salem', 'gloucester'],
     recommendedVehicles: ['Chrysler 300', 'Volvo S90', 'GMC Yukon'],
     popularUseCase: 'business travelers and couples booking wedding transportation',
+    whyChooseUs: [
+      "Newburyport's restored Federal-era downtown and destination wedding scene make professional transportation essential for couples and guests who want to arrive without parking headaches on narrow Water Street or Inn Street. With venues drawing guests from across New England, a coordinated fleet from Greater Boston Livery ensures seamless arrivals and departures along the Merrimack River waterfront.",
+      "The professional community living in Newburyport's South End, Joppa Flats, and Plum Island areas increasingly treats chauffeured service as a practical commuter tool rather than a luxury. The 48-minute Logan run via I-95 South is productive time for emails and calls — far better than circling Terminal E for parking. Manchester-Boston Regional Airport is also a compelling 52-minute option we serve regularly.",
+      "Corporate travelers in the Newburyport area benefit from proximity to the Route 1 and I-95 business corridor, with clients including Watts Water Technologies and firms in the nearby Newburyport Business Park. A polished sedan pickup at Market Square sends exactly the right message when hosting out-of-town executives visiting the North Shore.",
+    ],
+    neighborhoods: ['Market Square', 'South End', 'Joppa Flats', 'Plum Island', 'Inn Street District', 'Moseley Pines', 'High Street Hill'],
+    localVenues: [
+      { name: 'The Garrison Inn', type: 'wedding' },
+      { name: 'Newburyport Art Association', type: 'event' },
+      { name: 'Plum Island Hotel', type: 'hotel' },
+      { name: 'Watts Water Technologies', type: 'corporate' },
+      { name: "David's Country Inn", type: 'wedding' },
+    ],
+    cityFaqs: [
+      { question: 'How far is Newburyport from Logan Airport by chauffeured car?', answer: 'Newburyport is approximately 40 miles from Logan, typically a 48-minute ride via I-95 South under normal conditions. We recommend scheduling pickup 75–90 minutes before domestic departures and 90–120 minutes before international flights to accommodate any I-95 congestion near Peabody or Lynn.' },
+      { question: 'Does Greater Boston Livery serve Manchester-Boston Regional Airport from Newburyport?', answer: 'Yes — MHT is actually closer for many Newburyport travelers at roughly 52 minutes via I-495 South. We serve all regional airports including MHT, BOS, and PVD, and can advise on which airport saves the most time based on your departure time and airline.' },
+      { question: 'Can you coordinate wedding transportation along the Newburyport waterfront?', answer: 'We specialize in wedding logistics at Newburyport venues like The Garrison Inn. We handle guest shuttles, bridal party transfers, and rehearsal dinner transportation, coordinating staging on Water Street and working around the Market Square foot traffic on busy summer weekends.' },
+      { question: 'Is there parking at Newburyport for a car service pickup?', answer: 'Your chauffeur meets you at your door — residential, hotel, or venue. For Market Square or Inn Street pickups we coordinate a brief curbside stop. No parking structure fees, no walking bags through downtown. We handle the logistics so you simply walk to the vehicle.' },
+    ],
   },
   {
     slug: 'gloucester',
@@ -417,6 +688,25 @@ export const locations: Location[] = [
     nearbySlugsSameRegion: ['salem', 'newburyport'],
     recommendedVehicles: ['Chrysler 300', 'Black SUV', 'Ford Expedition MAX XLT'],
     popularUseCase: 'airport transfers and corporate group travel',
+    whyChooseUs: [
+      "Gloucester's position as Cape Ann's commercial and cultural hub means residents and visitors face a genuine transportation gap — the 45-minute Logan run on Route 128 South is manageable by car, but parking costs and tunnel stress make chauffeured service a practical choice for frequent flyers in the East Gloucester, Bass Rocks, and Magnolia neighborhoods.",
+      "The Rocky Neck Art Colony, Good Harbor Beach vacation rentals, and a growing number of remote professionals relocating to Gloucester's Victorian neighborhoods have created steady demand for premium transportation. Clients arriving at Logan or Boston South Station for a weekend on Cape Ann expect the journey itself to feel like part of the experience — not an afterthought.",
+      "Corporate clients with ties to the fishing and marine industry, including companies operating out of Gloucester Harbor and the Maritime Heritage Center area, use Greater Boston Livery for executive airport transfers and client entertainment logistics. Our drivers know the city's distinctive one-way streets and seasonal congestion near Rogers Street intimately.",
+    ],
+    neighborhoods: ['East Gloucester', 'Rocky Neck', 'Magnolia', 'Bass Rocks', 'West Gloucester', 'Lanesville', 'Good Harbor Beach Area'],
+    localVenues: [
+      { name: 'Beauport Hotel Gloucester', type: 'hotel' },
+      { name: 'Cruiseport Gloucester', type: 'event' },
+      { name: 'Rocky Neck Art Colony', type: 'event' },
+      { name: 'Cape Ann Museum', type: 'corporate' },
+      { name: 'Atlantis Oceanfront Inn', type: 'hotel' },
+    ],
+    cityFaqs: [
+      { question: 'How long is the drive from Gloucester to Logan Airport?', answer: 'Approximately 36 miles and 45 minutes via Route 128 South under normal conditions. Morning rush toward Boston can push this to 60–70 minutes. We track your flight and adjust pickup times dynamically, ensuring you clear Logan security with time to spare.' },
+      { question: 'Can Greater Boston Livery pick up guests at Beauport Hotel Gloucester?', answer: 'Yes — the Beauport Hotel on Rogers Street is one of our regular pickup and drop-off locations in Gloucester. We coordinate directly with hotel staff for seamless curbside arrivals, ideal for corporate groups or wedding guests staying waterfront on Cape Ann.' },
+      { question: 'Do you serve Gloucester for late-night airport arrivals?', answer: 'We operate 24/7 with no late-night surcharge. Many Gloucester clients on red-eye returns appreciate meeting a professional chauffeur at Logan baggage claim rather than hunting for their car at a remote lot. We monitor your flight and adjust if it arrives early or late.' },
+      { question: 'What neighborhoods in Gloucester do you serve?', answer: 'We serve all Gloucester neighborhoods including East Gloucester, Rocky Neck, Magnolia, Bass Rocks, West Gloucester, and Lanesville. We also cover adjacent Essex, Manchester-by-the-Sea, and Rockport for clients needing seamless North Shore transportation.' },
+    ],
   },
   {
     slug: 'worcester',
@@ -435,6 +725,26 @@ export const locations: Location[] = [
     nearbySlugsSameRegion: ['shrewsbury'],
     recommendedVehicles: ['Chrysler 300', 'GMC Yukon', 'Ford Expedition MAX XLT'],
     popularUseCase: 'medical professionals, university staff, and corporate travelers',
+    whyChooseUs: [
+      "Worcester's status as New England's second-largest city — anchored by Holy Cross, WPI, Assumption University, and a dominant UMass Memorial Health system — drives significant executive and academic travel. Professionals making the 52-minute Logan run via the Mass Pike (I-90 East) gain a mobile office in a quiet luxury sedan rather than losing an hour to the drive's mental toll.",
+      "The Canal District, Shrewsbury Street restaurant corridor, and the emerging biotech cluster near Worcester's medical district generate consistent demand for corporate ground transportation. When C-suite visitors fly into Logan or T.F. Green in Providence (48 minutes south), a professional chauffeur and polished vehicle make the right first impression before any boardroom meeting begins.",
+      "For Worcester families with students at area colleges, chauffeured airport transportation is increasingly the preferred move-in and move-out solution — far safer than an overloaded family car on I-90 in August. Polar Park event transportation and post-concert logistics from the DCU Center are also areas where our fleet handles what rideshares simply cannot coordinate reliably.",
+    ],
+    neighborhoods: ['Canal District', 'Shrewsbury Street', 'Tatnuck Square', 'Green Hill', 'Burncoat', 'College Hill', 'Grafton Hill'],
+    localVenues: [
+      { name: 'Polar Park', type: 'event' },
+      { name: 'DCU Center', type: 'event' },
+      { name: 'Beechwood Hotel', type: 'hotel' },
+      { name: 'WPI Campus', type: 'corporate' },
+      { name: 'Mechanics Hall', type: 'wedding' },
+    ],
+    cityFaqs: [
+      { question: 'How long does a chauffeured car take from Worcester to Logan Airport?', answer: 'Worcester to Logan is approximately 48 miles and 52 minutes via the Mass Pike (I-90 East) under typical conditions. During weekday morning rush, budget 65–75 minutes. We schedule pickups with built-in buffer and monitor traffic from the I-290/I-90 interchange onward.' },
+      { question: 'Does Greater Boston Livery serve Worcester to Providence Airport (PVD)?', answer: 'Yes — T.F. Green in Providence is only about 48 minutes from Worcester via I-395 South and is often a practical alternative to Logan, especially for Southwest and Spirit flights. We serve PVD, BOS, and MHT equally and can advise on which airport fits your schedule best.' },
+      { question: 'Can you handle corporate transportation for Worcester medical sector clients?', answer: 'Absolutely. We regularly serve UMass Memorial Health, Reliant Medical Group, and biotech firms in the Worcester medical corridor. Our chauffeurs maintain strict confidentiality standards and are accustomed to medical executives with demanding, time-sensitive schedules.' },
+      { question: 'Do you offer group transportation from Worcester to Logan for university travel?', answer: 'Yes — we offer SUVs and passenger vans for group university travel from Holy Cross, WPI, and Assumption. Department research trips, athletics charters, and administrative travel are all services we coordinate with campus travel offices on flexible billing arrangements.' },
+      { question: 'Is Greater Boston Livery available for events at Mechanics Hall in Worcester?', answer: 'We handle pre- and post-event transportation for Mechanics Hall galas, weddings, and concerts. Our team coordinates drop-off and pickup on Waldo Street, managing guest flow efficiently for large events even when downtown Worcester parking is at a premium.' },
+    ],
   },
   {
     slug: 'shrewsbury',
@@ -451,6 +761,25 @@ export const locations: Location[] = [
     nearbySlugsSameRegion: ['worcester'],
     recommendedVehicles: ['Chrysler 300', 'Volvo S90', 'Black SUV'],
     popularUseCase: 'business travelers and families flying out of Logan',
+    whyChooseUs: [
+      "Shrewsbury's appeal as a residential suburb with direct Mass Pike access makes it one of the most logistically efficient communities on the Greater Boston Livery network. Professionals in the Edgemere, White City, and Lake Quinsigamond neighborhoods benefit from a 48-minute door-to-door Logan run that begins the moment they step outside — no shoveling out a car, no parking fees, no stress.",
+      "The UMass Memorial Shrewsbury Campus and a cluster of medical and technology employers along Route 9 and Route 20 create consistent demand for professional corporate ground transportation. Out-of-town executives visiting Shrewsbury's business corridor expect polished, punctual service from Logan or Manchester-Boston Regional Airport — both well within our standard route network.",
+      "Shrewsbury families have discovered that chauffeured airport service costs surprisingly little more than long-term parking at Logan — and delivers genuine comfort in return. Whether it is an early 5 AM departure from a neighborhood off South Street or a late-night return along the Pike, Greater Boston Livery treats every Shrewsbury pickup with the same premium-level service we provide to downtown Boston clients.",
+    ],
+    neighborhoods: ['Edgemere', 'White City', 'Lake Quinsigamond', 'Shrewsbury Center', 'Spring Street Area', 'South Shrewsbury', 'North Shrewsbury'],
+    localVenues: [
+      { name: 'UMass Memorial Shrewsbury Campus', type: 'corporate' },
+      { name: 'Lake Quinsigamond Sailing Club', type: 'event' },
+      { name: 'Lakeside Grille at Lake Quinsigamond', type: 'event' },
+      { name: 'Sheraton Worcester', type: 'hotel' },
+      { name: 'Shrewsbury Country Club', type: 'wedding' },
+    ],
+    cityFaqs: [
+      { question: 'How far is Shrewsbury from Logan Airport by chauffeured car?', answer: "Shrewsbury is approximately 44 miles from Logan via the Mass Pike (I-90 East), typically a 48-minute ride. We recommend allowing 65–75 minutes during peak weekday morning hours. Your chauffeur picks up at your door in Shrewsbury Center, Edgemere, or wherever you are located." },
+      { question: 'Is Manchester-Boston Regional Airport a good alternative for Shrewsbury travelers?', answer: 'MHT is approximately 42 minutes from Shrewsbury via I-290 North and Route 3, making it a genuine time-saver for certain routes. We serve MHT regularly and can help you compare drive times and airline options to determine the most practical airport for your trip.' },
+      { question: 'Do you serve Shrewsbury for early-morning Mass Pike airport runs?', answer: 'Yes — we cover Shrewsbury around the clock. Many clients in the Lake Quinsigamond and White City areas schedule 4–5 AM pickups for early Logan departures. We are on time, every time, with no early-morning fee beyond our standard rates.' },
+      { question: 'Can Greater Boston Livery handle corporate pickups along the Route 9 corridor in Shrewsbury?', answer: 'Absolutely. The Route 9 and Route 20 business corridors in Shrewsbury are well within our regular service area. We accommodate last-minute executive pickups, client airport transfers, and recurring corporate accounts for businesses based in the Shrewsbury medical and technology cluster.' },
+    ],
   },
   {
     slug: 'barnstable',
@@ -467,6 +796,26 @@ export const locations: Location[] = [
     nearbySlugsSameRegion: ['sandwich', 'falmouth'],
     recommendedVehicles: ['GMC Yukon', 'Ford Expedition MAX XLT', 'Mercedes-Benz Sprinter Van'],
     popularUseCase: 'Cape Cod residents and visitors transferring to Logan or TF Green',
+    whyChooseUs: [
+      "Barnstable is the Cape's largest town and Hyannis its commercial heart — making it the hub of Cape Cod's demand for premium ground transportation. The 80-minute Logan run on Route 6 West and Route 3 North is long enough that clients in Hyannis Port, Osterville, and Centerville genuinely appreciate a chauffeur who handles the driving while they decompress, make calls, or simply enjoy the ride.",
+      "The Kennedy legacy in Hyannis Port, the busy Cape Cod Gateway Airport, and a concentration of high-net-worth seasonal and year-round residents create a sophisticated client base that expects the same transportation quality they receive in Boston or New York. Greater Boston Livery serves Barnstable clients with the same premium fleet and professionalism — no summer-season shortcuts.",
+      "Corporate travelers using T.F. Green Airport in Providence (approximately 65 minutes via Route 6 West and I-195) find it an excellent Logan alternative for many airlines. Barnstable clients heading to business meetings in Boston's Financial District or the Seaport also use our service for the full one-way trip, treating the ride as private office time rather than a traffic ordeal on Route 3.",
+    ],
+    neighborhoods: ['Hyannis', 'Hyannis Port', 'Osterville', 'Centerville', 'Marstons Mills', 'Cotuit', 'West Barnstable'],
+    localVenues: [
+      { name: 'Wequassett Resort and Golf Club', type: 'wedding' },
+      { name: 'JFK Hyannis Museum', type: 'event' },
+      { name: 'Hyannis Harbor Hotel', type: 'hotel' },
+      { name: 'Cape Codder Resort & Spa', type: 'hotel' },
+      { name: 'Barnstable County Fairgrounds', type: 'event' },
+    ],
+    cityFaqs: [
+      { question: 'How long is the drive from Barnstable to Logan Airport?', answer: 'From Hyannis and Barnstable center, expect approximately 80–90 minutes to Logan via Route 6 West and Route 3 North under typical conditions. Summer weekend traffic on Route 3 can add 20–30 minutes, so we factor seasonal patterns into every Barnstable pickup schedule.' },
+      { question: 'Is Providence Airport a better option than Logan for Barnstable travelers?', answer: 'For many Cape Cod travelers, T.F. Green (PVD) is 65 minutes from Barnstable via Route 6 and I-195 and avoids Route 3 congestion entirely. We serve PVD regularly and can help you compare schedules — it is often faster, cheaper to park if needed, and less crowded than Logan.' },
+      { question: 'Do you serve Hyannis Port and Osterville for private pickups?', answer: 'Yes — we cover all Barnstable villages including Hyannis Port, Osterville, Centerville, Cotuit, and West Barnstable. Many of our Barnstable clients are year-round residents in quieter villages who rely on us for Boston medical appointments, Logan departures, and corporate travel.' },
+      { question: 'Can Greater Boston Livery handle wedding transportation at Cape Cod venues near Barnstable?', answer: 'Absolutely. We coordinate bridal party transfers, guest shuttles, and rehearsal dinner logistics for Cape Cod weddings. Our team manages staging logistics on narrow village roads and coordinates with venues across Barnstable County, from Osterville estates to Hyannis waterfront venues.' },
+      { question: 'Do summer traffic conditions affect Barnstable airport pickups?', answer: 'Yes, and we plan for it. Summer Fridays on Route 3 are notoriously slow. We add buffer time to all July and August Barnstable pickups and use Route 6A or alternate corridors when Route 6 is saturated. You will never miss a flight because we underestimated Cape traffic.' },
+    ],
   },
   {
     slug: 'sandwich',
@@ -483,6 +832,25 @@ export const locations: Location[] = [
     nearbySlugsSameRegion: ['barnstable', 'falmouth'],
     recommendedVehicles: ['Chrysler 300', 'GMC Yukon', 'Ford Expedition MAX XLT'],
     popularUseCase: 'gateway airport transfers for upper Cape residents',
+    whyChooseUs: [
+      "Sandwich holds a unique geographic advantage as the Cape Cod Canal gateway — the first and last town on the Cape, with direct access to Route 6 and Route 6A without traversing congested mid-Cape corridors. Residents in the Spring Hill, East Sandwich, and Forestdale neighborhoods reach Logan in approximately 65 minutes, making Greater Boston Livery a genuinely practical daily-travel tool.",
+      "As the oldest town on Cape Cod, Sandwich attracts destination weddings at Heritage Museums & Gardens and private estate events that require coordinated multi-vehicle logistics. Our chauffeurs navigate the town's historic center, the Sandwich Boardwalk area, and the marina district with ease, providing the seamless service that makes event transportation invisible to guests.",
+      "Sandwich professionals commuting to Providence for business benefit from T.F. Green Airport at roughly 55 minutes via Bourne Bridge and I-195 — often a faster and less congested alternative to Logan. Greater Boston Livery's dual-airport knowledge means Sandwich clients always have options, and we help identify the route and airport combination that serves each trip best.",
+    ],
+    neighborhoods: ['Sandwich Center', 'East Sandwich', 'Spring Hill', 'Forestdale', 'South Sandwich', 'Sandwich Marina District', "Chipman's Cove Area"],
+    localVenues: [
+      { name: 'Heritage Museums & Gardens', type: 'wedding' },
+      { name: 'Sandwich Boardwalk', type: 'event' },
+      { name: 'Belfry Inn & Bistro', type: 'hotel' },
+      { name: 'Cape Cod Canal Visitor Center', type: 'event' },
+      { name: 'Daniel Webster Inn', type: 'wedding' },
+    ],
+    cityFaqs: [
+      { question: 'How long does it take to get from Sandwich to Logan Airport?', answer: 'Sandwich is approximately 60 miles from Logan via Route 6 and Route 3 North — typically 65–75 minutes under normal conditions. We schedule Sandwich pickups with extra summer buffer and monitor Sagamore Bridge and Route 3 traffic to keep every airport run on time.' },
+      { question: 'Is Providence Airport closer to Sandwich than Logan?', answer: 'T.F. Green in Providence is about 55 minutes from Sandwich via the Bourne Bridge and I-195 West, making it meaningfully faster than Logan for many travelers. We serve PVD regularly from Sandwich and can help you evaluate whether the time savings align with your airline and route.' },
+      { question: 'Can you pick up from the Belfry Inn or Daniel Webster Inn in Sandwich?', answer: "Yes — both are regular pickup points for our Sandwich clients, particularly for wedding transportation. We coordinate curbside arrivals and departures at Sandwich's historic inns and work directly with venue coordinators to align with event schedules." },
+      { question: 'Do you offer transportation from Sandwich for Heritage Museums & Gardens weddings?', answer: 'Heritage Museums & Gardens is one of our featured Cape Cod wedding venues. We provide bridal party sedans, guest shuttles from area hotels, and post-reception transportation — coordinating staging on Grove Street and managing guest departures smoothly across a full wedding weekend.' },
+    ],
   },
   {
     slug: 'falmouth',
@@ -499,5 +867,25 @@ export const locations: Location[] = [
     nearbySlugsSameRegion: ['sandwich', 'barnstable'],
     recommendedVehicles: ['Chrysler 300', 'Black SUV', 'Ford Expedition MAX XLT'],
     popularUseCase: 'Woods Hole researchers, MBL staff, and seasonal residents',
+    whyChooseUs: [
+      "Falmouth's dual identity as both a beloved Cape Cod beach destination and a world-class scientific community centered on Woods Hole makes it one of the most interesting markets on our network. Marine Biological Laboratory researchers, Woods Hole Oceanographic Institution scientists, and NOAA staff all travel frequently to international airports — and Greater Boston Livery handles these runs with the punctuality that a researcher catching a connection to Reykjavik or Tokyo genuinely needs.",
+      "The Island Queen Ferry Terminal in Falmouth Heights creates natural demand for coordinated transportation during the Martha's Vineyard season. Travelers arriving at Logan or T.F. Green and continuing to the Vineyard via Falmouth ferry use our service to make a seamless Logan-to-dock connection, avoiding the stress of driving, parking, and navigating the Bourne Bridge on a summer Friday.",
+      "Falmouth Heights, Teaticket, and North Falmouth residential communities house a substantial year-round population of retirees and professionals who treat chauffeured car service as a practical luxury. At 82 minutes to Logan and 68 minutes to Providence, Falmouth is among the longer drives on the Greater Boston Livery network — which makes the value of a relaxed, professional ride even more clear compared to self-driving a 150-mile round trip to the airport.",
+    ],
+    neighborhoods: ['Falmouth Heights', 'Woods Hole', 'North Falmouth', 'West Falmouth', 'Teaticket', 'East Falmouth', 'Sippewissett'],
+    localVenues: [
+      { name: 'Island Queen Ferry Terminal', type: 'event' },
+      { name: 'Marine Biological Laboratory', type: 'corporate' },
+      { name: 'Woods Hole Oceanographic Institution', type: 'corporate' },
+      { name: 'Coonamessett Inn', type: 'wedding' },
+      { name: 'Sea Crest Beach Hotel', type: 'hotel' },
+    ],
+    cityFaqs: [
+      { question: 'How long is the ride from Falmouth to Logan Airport?', answer: 'Falmouth to Logan is approximately 74 miles and 82–90 minutes via Route 28, Route 6, and Route 3 North. Summer weekend travel can push this to 100–110 minutes. We always schedule Falmouth airport pickups with generous buffer and monitor the Bourne and Sagamore Bridge approaches in real time.' },
+      { question: 'Is Providence Airport a practical alternative for Falmouth travelers?', answer: 'T.F. Green in Providence is roughly 68 minutes from Falmouth via Route 28 and I-195 West — meaningfully shorter than Logan and often less traffic-prone. We regularly run Falmouth-to-PVD and can advise whether Providence better serves your airline, departure time, and destination.' },
+      { question: "Can Greater Boston Livery connect me from Logan to the Falmouth ferry terminal for Martha's Vineyard?", answer: 'Yes — Logan-to-Island Queen is one of our most popular Falmouth routes during the summer season. We time your pickup at Logan baggage claim to your ferry departure, accounting for Cape traffic, so you arrive at the Falmouth Heights dock without rushing or missing a sailing.' },
+      { question: 'Do you serve the Woods Hole scientific community for international airport runs?', answer: 'We serve MBL, WHOI, and NOAA researchers regularly from the Woods Hole area for both Logan and Providence departures. Many of our Woods Hole clients travel internationally on variable schedules — we accommodate early-morning, late-night, and short-notice booking requests with equal professionalism.' },
+      { question: 'What is the best time to leave Falmouth to catch an early morning Logan flight?', answer: 'For a 6 AM departure, we typically schedule Falmouth pickups at 3:30–3:45 AM to clear the bridges before any Cape traffic builds. For 7–8 AM flights, 4:30 AM pickup usually provides sufficient margin. We calibrate this to your specific terminal and airline at booking.' },
+    ],
   },
 ]

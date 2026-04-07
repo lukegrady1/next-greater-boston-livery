@@ -27,7 +27,7 @@ export function TeamContent() {
         </div>
         <div className="relative z-10">
           <RevealOnScroll>
-            <p className="label-sm mb-4">The People Behind the Service</p>
+            <p className="label-sm mb-4 !text-cream">The People Behind the Service</p>
             <h1 className="heading-display text-cream max-w-2xl">
               Meet the<br />
               <span className="gold-gradient">Team</span>

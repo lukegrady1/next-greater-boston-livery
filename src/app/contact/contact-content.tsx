@@ -12,8 +12,8 @@ const contactDetails = [
   {
     icon: Phone,
     label: 'Phone',
-    value: '1-855-GB-LIMO',
-    sub: '(855) 425-4661',
+    value: '(855) 425-4661',
+    sub: 'Available 24/7',
     href: 'tel:+18554254661',
   },
   {
@@ -55,7 +55,7 @@ export function ContactContent() {
 
           <div className="relative z-10 max-w-2xl">
             <RevealOnScroll>
-              <p className="label-sm mb-4">Reservations</p>
+              <p className="label-sm mb-4 !text-cream">Reservations</p>
               <h1 className="heading-display text-cream mb-6">
                 Ready to Ride?<br />
                 <span className="gold-gradient">Let&apos;s Book Your Journey.</span>

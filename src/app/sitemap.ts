@@ -11,11 +11,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/reviews/`, lastModified: '2026-03-27', changeFrequency: 'weekly', priority: 0.6 },
     { url: `${baseUrl}/contact/`, lastModified: '2026-03-27', changeFrequency: 'yearly', priority: 0.5 },
     { url: `${baseUrl}/team/`, lastModified: '2026-03-27', changeFrequency: 'yearly', priority: 0.5 },
-    { url: `${baseUrl}/services/airport/`, lastModified: '2026-03-27', changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${baseUrl}/services/corporate/`, lastModified: '2026-03-27', changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${baseUrl}/services/weddings/`, lastModified: '2026-03-27', changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${baseUrl}/services/airport-transfers/`, lastModified: '2026-04-07', changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${baseUrl}/services/corporate-car-service/`, lastModified: '2026-04-07', changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${baseUrl}/services/wedding-transportation/`, lastModified: '2026-04-07', changeFrequency: 'monthly', priority: 0.9 },
     { url: `${baseUrl}/services/roadshows/`, lastModified: '2026-03-27', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${baseUrl}/services/nightlife/`, lastModified: '2026-03-27', changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/services/limo-service/`, lastModified: '2026-04-07', changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${baseUrl}/services/prom-limo/`, lastModified: '2026-04-07', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${baseUrl}/locations/`, lastModified: '2026-04-01', changeFrequency: 'monthly', priority: 0.9 },
   ]
 

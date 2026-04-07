@@ -2,7 +2,7 @@ import type { Service } from '@/types'
 
 export const services: Service[] = [
   {
-    id: 'airport',
+    id: 'airport-transfers',
     title: 'Airport Transfers',
     description: 'Meet-and-greet service at Logan International, Manchester-Boston, and T.F. Green airports. We track your flight in real time — arrivals, delays, gate changes. Your chauffeur will be waiting, regardless of when you land.',
     icon: 'Plane',
@@ -41,7 +41,7 @@ export const services: Service[] = [
     ],
   },
   {
-    id: 'corporate',
+    id: 'corporate-car-service',
     title: 'Corporate Travel',
     description: 'First impressions matter. Whether transporting C-suite executives, hosting client roadshows, or coordinating team offsites across New England, our corporate fleet delivers quiet luxury on every mile.',
     icon: 'Briefcase',
@@ -80,7 +80,7 @@ export const services: Service[] = [
     ],
   },
   {
-    id: 'weddings',
+    id: 'wedding-transportation',
     title: 'Weddings & Events',
     description: 'Your wedding day deserves perfection. We coordinate bridal party transportation with military precision, ensuring every arrival is picture-perfect and every departure is seamless — while you focus on the moment.',
     icon: 'Heart',
@@ -193,6 +193,110 @@ export const services: Service[] = [
       {
         question: 'Can we bring our own beverages?',
         answer: 'Select vehicles are alcohol-friendly and permit outside beverages. Please confirm when booking as the policy varies by vehicle type.',
+      },
+    ],
+  },
+  {
+    id: 'limo-service',
+    title: 'Boston Limo Service',
+    description: 'Luxury limousine service throughout Greater Boston and New England. From executive sedans and SUVs to stretch limousines and party buses — the right vehicle for every occasion, every time.',
+    icon: 'Car',
+    image: '/black_limo.webp',
+    features: [
+      'Executive sedans, SUVs & stretch limousines',
+      'Professional, suited chauffeurs',
+      'Airport transfers at Logan, MHT & PVD',
+      '24/7/365 availability — no surge pricing',
+    ],
+    metaTitle: 'Boston Limo Service | Luxury Limousine Hire | Greater Boston Livery',
+    metaDescription: 'Premium limo service in Boston, MA. Luxury sedans, SUVs, stretch limos & party buses for airport transfers, corporate travel, weddings & special events. No surge pricing. Call (855) 425-4661.',
+    longDescription: [
+      'Greater Boston Livery is the limo service Boston professionals and families trust for every occasion — from a quiet sedan to Logan Airport at 5 AM to a 10-passenger stretch limousine for a night on the town. We operate one of the most versatile luxury fleets in the Greater Boston area, and every vehicle is maintained to the same exacting standard.',
+      'Unlike rideshare apps and discount car services, GBL provides a consistent, premium experience on every ride. Your chauffeur arrives in a polished vehicle, professionally dressed, and fully briefed on your itinerary. There are no surge prices, no driver cancellations, and no compromises — just reliable luxury ground transportation, door to door.',
+      'Our limo service covers all of Greater Boston, the South Shore, North Shore, Cape Cod, Central Massachusetts, and extends to New York City for long-distance charters. Whether you need a one-way airport transfer, an hourly charter for a corporate roadshow, or a full-day wedding package with multiple vehicles, GBL builds the service around your schedule.',
+      'Corporate clients benefit from dedicated account management, consolidated monthly billing, and priority fleet availability. Frequent travelers can establish recurring bookings with a preferred vehicle type and chauffeur — the kind of consistency that turns ground transportation from a logistical headache into a seamless part of the workday.',
+    ],
+    faqs: [
+      {
+        question: 'What types of limos are available in Boston?',
+        answer: 'Greater Boston Livery offers luxury sedans (Chrysler 300, Volvo S90), executive SUVs (Jeep Wagoneer L, GMC Yukon, Ford Expedition), a 10-passenger white Chrysler 300 stretch limousine, Mercedes-Benz Sprinter vans, mini coaches, 55-passenger motor coaches, and party buses. All are available 24/7 throughout Greater Boston.',
+      },
+      {
+        question: 'How much does a limo service cost in Boston?',
+        answer: 'Pricing varies by vehicle type, distance, and duration. A sedan transfer from downtown Boston to Logan Airport starts at a competitive flat rate. Hourly charters, wedding packages, and corporate accounts are quoted individually. Call (855) 425-4661 or book online for an instant quote — there are never surge prices or hidden fees.',
+      },
+      {
+        question: 'Can I book a limo for just a few hours?',
+        answer: 'Yes. We offer both hourly charters and point-to-point service. Hourly bookings are popular for nights out, wine tours, corporate roadshows, and events where your schedule may change. Minimum booking times vary by vehicle type.',
+      },
+      {
+        question: 'What areas does your Boston limo service cover?',
+        answer: 'We serve all of Greater Boston, Cambridge, the South Shore, North Shore, Cape Cod, Central Massachusetts (including Worcester), and travel to New York City, Providence, Hartford, and throughout New England. Any pickup or drop-off address in the region qualifies for service.',
+      },
+      {
+        question: 'How far in advance should I book a limo in Boston?',
+        answer: 'We recommend booking at least 24 hours in advance for standard trips. For weddings, proms, and large group events, book 4–6 weeks ahead to secure your preferred vehicle. Same-day bookings are available subject to fleet availability — call us directly for urgent requests.',
+      },
+      {
+        question: 'Do you offer corporate limo accounts?',
+        answer: 'Yes. GBL provides dedicated corporate accounts with centralized billing, monthly invoicing, priority booking, flight tracking on every airport run, and a dedicated account manager. Many Boston-area companies use GBL as their exclusive ground transportation provider.',
+      },
+      {
+        question: 'Is your limo service available for airport transfers?',
+        answer: 'Airport transfers are our most popular service. We serve Logan International (BOS), Manchester-Boston Regional (MHT), and T.F. Green (PVD). Every airport pickup includes real-time flight tracking and a complimentary 60-minute wait from wheels-down.',
+      },
+    ],
+  },
+  {
+    id: 'prom-limo',
+    title: 'Prom Limo Service',
+    description: 'Make prom night unforgettable with a luxury limousine from Greater Boston Livery. Stretch limos, party buses, and SUVs — professional chauffeurs, safe transportation, and an arrival your group will never forget.',
+    icon: 'Star',
+    image: '/10_passenger_white_stretch_limo.webp',
+    features: [
+      '10-passenger white stretch limousine',
+      'Party buses for larger groups',
+      'Professional chauffeurs',
+      'Flexible pickup and drop-off scheduling',
+      'Interior lighting and premium sound system',
+    ],
+    metaTitle: 'Prom Limo Service Boston | Stretch Limo & Party Bus Rental | Greater Boston Livery',
+    metaDescription: 'Book a prom limo in Boston. Stretch limousines, party buses & luxury SUVs for prom night. Professional chauffeurs, safe transportation, red carpet arrival. Book early — peak season fills fast. Call (855) 425-4661.',
+    longDescription: [
+      'Prom night is one of those milestone moments that deserves a vehicle worthy of the occasion. Greater Boston Livery provides luxury prom limousine service throughout Greater Boston, the South Shore, North Shore, and beyond — giving your group the grand entrance, the safe ride, and the unforgettable experience that makes the night complete.',
+      'Our most popular prom vehicle is the 10-passenger white Chrysler 300 stretch limousine, featuring a premium interior with ambient lighting, a sound system, and comfortable seating for your group. For larger prom parties, our 26-passenger party bus accommodates bigger groups while keeping everyone together for the full evening.',
+      'Safety is the foundation of our prom service. Every GBL chauffeur is professionally licensed, background-checked, and trained to provide courteous, responsible service for young passengers. We enforce a strict no-alcohol policy for all underage passengers, and parents receive full booking confirmation details including the chauffeur\'s name and vehicle information before the night begins.',
+      'Prom season in Greater Boston runs from April through June, and our most popular vehicles book out weeks in advance. We strongly recommend reserving your prom limo 3–6 months ahead of your event date, especially for Saturday nights and for the stretch limousine. Early booking guarantees your preferred vehicle and allows time to coordinate pickup logistics with your group.',
+      'GBL handles all the logistics so parents and students can focus on the evening itself. We coordinate multi-stop pickups across different neighborhoods, manage the timeline from photos to venue to after-party, and provide a professional presence that gives parents peace of mind. Your chauffeur arrives early, rolls out the red carpet, and ensures every member of the group is accounted for at every stop.',
+    ],
+    faqs: [
+      {
+        question: 'How much does a prom limo cost in Boston?',
+        answer: 'Prom limo pricing depends on the vehicle, number of hours, and number of stops. The stretch limousine and party bus are our most popular prom choices. Call (855) 425-4661 for a custom quote based on your group size and evening timeline — we provide all-inclusive pricing with no hidden fees.',
+      },
+      {
+        question: 'How early should I book a prom limo?',
+        answer: 'We recommend booking 3–6 months before prom night. April through June is our busiest season, and Saturday nights fill first. The 10-passenger stretch limousine is the most requested prom vehicle and books out earliest. Do not wait until the last minute — availability becomes extremely limited by March.',
+      },
+      {
+        question: 'What is the most popular prom limo?',
+        answer: 'Our 10-passenger white Chrysler 300 stretch limousine is the top choice for Boston-area proms. It accommodates up to 10 passengers comfortably, features interior lighting and a premium sound system, and makes a dramatic red-carpet arrival at any venue.',
+      },
+      {
+        question: 'Can a prom limo make multiple stops to pick up the group?',
+        answer: 'Yes. Multi-stop pickups are standard for prom bookings. We coordinate a route that collects everyone in the group from their homes, then proceeds to the photo location and prom venue. After the event, we handle the reverse — dropping each passenger at their designated address.',
+      },
+      {
+        question: 'Is alcohol allowed in the prom limo?',
+        answer: 'No. Greater Boston Livery enforces a strict no-alcohol policy for all underage passengers. This is non-negotiable and is part of our commitment to providing safe, responsible prom transportation that parents can trust.',
+      },
+      {
+        question: 'What information do parents receive before prom night?',
+        answer: 'Parents receive full booking confirmation including the chauffeur\'s name, vehicle description, license plate number, and a direct contact number. We also confirm the complete pickup and drop-off itinerary so every family knows exactly when and where their student will be collected and returned.',
+      },
+      {
+        question: 'Do you serve prom events outside of Boston?',
+        answer: 'Yes. We provide prom limo service across all of Greater Boston, the South Shore, North Shore, and Central Massachusetts. Whether your prom is in Newton, Hingham, Salem, or Worcester, GBL will be there with the same premium service and professional chauffeurs.',
       },
     ],
   },

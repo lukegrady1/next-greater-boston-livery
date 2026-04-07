@@ -12,13 +12,13 @@ import { RevealOnScroll } from '@/components/motion/RevealOnScroll'
 import { StaggerChildren, StaggerItem } from '@/components/motion/StaggerChildren'
 
 export const metadata: Metadata = {
-  title: 'Service Areas | Greater Boston Livery',
-  description: 'Greater Boston Livery serves Greater Boston, the South Shore, North Shore, Cape Cod, and Central Massachusetts. Browse all service areas for airport transfers, limo service, corporate travel, and wedding transportation.',
+  title: 'Boston Limo & Car Service Areas | Greater Boston Livery',
+  description: 'Greater Boston Livery serves 20+ cities across Massachusetts — from Cambridge to Cape Cod. Airport transfers, limo service, corporate & wedding transportation.',
   alternates: { canonical: `${SITE_URL}/locations/` },
   openGraph: {
     type: 'website',
     url: `${SITE_URL}/locations/`,
-    title: 'Service Areas | Greater Boston Livery',
+    title: 'Boston Limo & Car Service Areas | Greater Boston Livery',
     description: 'Browse all service areas for premium chauffeured transportation throughout Massachusetts.',
     images: [{ url: OG_IMAGE_URL, width: 1200, height: 630 }],
   },
@@ -41,11 +41,14 @@ export default function LocationsPage() {
         {/* Hero */}
         <section className="bg-navy pt-40 pb-20 section-padding">
           <RevealOnScroll>
-            <p className="label-sm mb-4">Where We Serve</p>
-            <h1 className="heading-display text-cream max-w-2xl">
+            <p className="label-sm mb-4 !text-cream">Where We Serve</p>
+            <h1 className="font-display text-lg sm:text-xl text-cream font-medium tracking-wide mb-4">
+              Boston Limo &amp; Car Service Areas Across Massachusetts
+            </h1>
+            <h2 className="heading-display text-cream max-w-2xl">
               Greater Boston Livery —{' '}
               <span className="gold-gradient">Service Areas</span>
-            </h1>
+            </h2>
             <p className="font-body text-silver/60 mt-6 max-w-xl leading-relaxed">
               Premium chauffeured transportation serving Greater Boston, the South Shore,
               North Shore, Cape Cod, Central Massachusetts, and beyond. Select your city below

@@ -15,7 +15,7 @@ export function ReviewsContent() {
       {/* Hero */}
       <section className="bg-navy pt-40 pb-20 section-padding">
         <RevealOnScroll>
-          <p className="label-sm mb-4">Testimonials</p>
+          <p className="label-sm mb-4 !text-cream">Testimonials</p>
           <h1 className="heading-display text-cream max-w-2xl">
             Trusted by Boston&apos;s<br />
             <span className="gold-gradient">Most Discerning Clients</span>

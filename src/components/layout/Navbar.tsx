@@ -10,10 +10,10 @@ import { useScrolled } from '@/hooks/useScrolled'
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/fleet', label: 'Fleet' },
-  { href: '/services', label: 'Services' },
-  { href: '/reviews', label: 'Reviews' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/fleet/', label: 'Fleet' },
+  { href: '/services/', label: 'Services' },
+  { href: '/reviews/', label: 'Reviews' },
+  { href: '/contact/', label: 'Contact' },
 ]
 
 export function Navbar() {

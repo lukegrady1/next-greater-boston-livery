@@ -23,8 +23,8 @@ const reviewDateMap: Record<string, string> = {
 }
 
 export const metadata: Metadata = {
-  title: 'Client Reviews | 5-Star Chauffeured Service Boston | Greater Boston Livery',
-  description: `Greater Boston Livery has earned a perfect ${avgRating}-star rating from ${reviews.length} verified clients. Read reviews from corporate executives, wedding couples, and frequent travelers.`,
+  title: 'Customer Reviews | Boston Limo Service | Greater Boston Livery',
+  description: "See why Boston professionals trust Greater Boston Livery. Read verified client reviews for airport transfers, corporate car service & wedding transportation.",
   alternates: { canonical: `${SITE_URL}/reviews/` },
   openGraph: {
     type: 'website',

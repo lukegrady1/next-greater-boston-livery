@@ -3,7 +3,7 @@
 import { useRef } from 'react'
 import Link from 'next/link'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { ArrowRight, Check } from 'lucide-react'
+import { ArrowRight, Check, ChevronDown } from 'lucide-react'
 import { PageTransition } from '@/components/motion/PageTransition'
 import { RevealOnScroll } from '@/components/motion/RevealOnScroll'
 import { services } from '@/data/services'
@@ -67,6 +67,49 @@ function ServiceBlock({ service, index }: { service: typeof services[0]; index: 
   )
 }
 
+const servicesFaqItems = [
+  {
+    question: 'How far in advance should I book?',
+    answer: 'We recommend booking at least 24 hours in advance for standard trips and 2-4 weeks for weddings or large events. Same-day bookings are available subject to fleet availability — call us directly for urgent requests.',
+  },
+  {
+    question: 'What is your cancellation policy?',
+    answer: 'Standard reservations can be cancelled up to 24 hours in advance at no charge. Wedding and event bookings have separate cancellation terms outlined at the time of booking. Contact us for full details.',
+  },
+  {
+    question: 'Do you serve areas outside of Boston?',
+    answer: 'Yes. We serve all of Massachusetts and regularly travel to New York City, Providence, Hartford, and throughout New England. Long-distance trips are available on request.',
+  },
+  {
+    question: 'What payment methods do you accept?',
+    answer: 'We accept all major credit cards, corporate invoicing for account holders, and cash. Payment is collected at the time of service unless you have a corporate account with monthly billing.',
+  },
+]
+
+function ServicesFaqSection() {
+  return (
+    <section className="bg-cream section-padding py-20">
+      <RevealOnScroll>
+        <p className="label-sm mb-4">Common Questions</p>
+        <h2 className="heading-lg mb-12">Frequently Asked Questions</h2>
+      </RevealOnScroll>
+      <div className="max-w-3xl space-y-0 border-t border-silver">
+        {servicesFaqItems.map((faq) => (
+          <details key={faq.question} className="group border-b border-silver">
+            <summary className="flex items-center justify-between cursor-pointer py-6 font-display text-base text-navy group-open:text-gold transition-colors">
+              {faq.question}
+              <ChevronDown size={16} className="text-navy/40 group-open:rotate-180 transition-transform" />
+            </summary>
+            <p className="font-body text-sm text-navy/60 leading-relaxed pb-6 pr-8">
+              {faq.answer}
+            </p>
+          </details>
+        ))}
+      </div>
+    </section>
+  )
+}
+
 export function ServicesContent() {
   return (
     <PageTransition>
@@ -81,11 +124,14 @@ export function ServicesContent() {
         </div>
         <div className="relative z-10">
           <RevealOnScroll>
-            <p className="label-sm mb-4">What We Offer</p>
-            <h1 className="heading-display text-cream max-w-2xl">
+            <p className="label-sm mb-4 !text-cream">What We Offer</p>
+            <h1 className="font-display text-lg sm:text-xl text-cream font-medium tracking-wide mb-4">
+              Boston Airport Transfers, Corporate &amp; Wedding Car Service
+            </h1>
+            <h2 className="heading-display text-cream max-w-2xl">
               Every Journey.<br />
               <span className="gold-gradient">Executed Flawlessly.</span>
-            </h1>
+            </h2>
             <p className="font-body text-silver/60 mt-6 max-w-xl leading-relaxed">
               From early morning airport runs to multi-day executive roadshows, we have the expertise, fleet, and professionalism to exceed expectations.
             </p>
@@ -99,6 +145,8 @@ export function ServicesContent() {
           <ServiceBlock key={service.id} service={service} index={i} />
         ))}
       </div>
+
+      <ServicesFaqSection />
 
       {/* CTA */}
       <section className="bg-navy section-padding py-20 text-center">

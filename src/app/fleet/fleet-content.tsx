@@ -145,11 +145,14 @@ export function FleetContent() {
         </div>
         <div className="relative z-10">
           <RevealOnScroll>
-            <p className="label-sm mb-4">The Fleet</p>
-            <h1 className="heading-display text-cream max-w-2xl">
+            <p className="label-sm mb-4 !text-cream">The Fleet</p>
+            <h1 className="font-display text-lg sm:text-xl text-cream font-medium tracking-wide mb-4">
+              Luxury Fleet: Sedans, SUVs, Sprinters &amp; Limos in Boston
+            </h1>
+            <h2 className="heading-display text-cream max-w-2xl">
               Vehicles Worthy of<br />
               <span className="gold-gradient">Your Journey</span>
-            </h1>
+            </h2>
             <p className="font-body text-silver/60 mt-6 max-w-xl leading-relaxed">
               From executive sedans to 55-passenger motor coaches, our diverse fleet is meticulously maintained and ready for any occasion.
             </p>

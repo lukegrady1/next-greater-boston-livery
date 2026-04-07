@@ -62,14 +62,14 @@ export function Footer() {
             <p className="label-sm mb-6">Services</p>
             <ul className="space-y-3">
               {[
-                { label: 'Airport Transfers', slug: 'airport' },
-                { label: 'Corporate Travel', slug: 'corporate' },
-                { label: 'Weddings & Events', slug: 'weddings' },
+                { label: 'Airport Transfers', slug: 'airport-transfers' },
+                { label: 'Corporate Travel', slug: 'corporate-car-service' },
+                { label: 'Weddings & Events', slug: 'wedding-transportation' },
                 { label: 'Roadshows & Tours', slug: 'roadshows' },
                 { label: 'Special Occasions', slug: 'nightlife' },
               ].map((s) => (
                 <li key={s.slug}>
-                  <Link href={`/services/${s.slug}`} className="font-body text-sm text-silver/70 hover:text-gold transition-colors">
+                  <Link href={`/services/${s.slug}/`} className="font-body text-sm text-silver/70 hover:text-gold transition-colors">
                     {s.label}
                   </Link>
                 </li>
@@ -88,7 +88,7 @@ export function Footer() {
             <ul className="space-y-3">
               {['Luxury Sedans', 'Executive SUVs', 'Mercedes Sprinter', 'Stretch Limousine', 'View All Vehicles'].map((v) => (
                 <li key={v}>
-                  <Link href="/fleet" className="font-body text-sm text-silver/70 hover:text-gold transition-colors">
+                  <Link href="/fleet/" className="font-body text-sm text-silver/70 hover:text-gold transition-colors">
                     {v}
                   </Link>
                 </li>

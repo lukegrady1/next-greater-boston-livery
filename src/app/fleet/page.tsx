@@ -10,7 +10,7 @@ import { FleetContent } from './fleet-content'
 
 export const metadata: Metadata = {
   title: 'Luxury Fleet | Sedans, SUVs, Sprinters & Limos | Greater Boston Livery',
-  description: "Browse Greater Boston Livery's luxury fleet: executive sedans, SUVs, Mercedes Sprinters, mini coaches, 55-passenger motor coaches, party buses, and stretch limousines. Available 24/7 in Boston.",
+  description: "Browse our luxury fleet: executive sedans, SUVs, Mercedes Sprinters, stretch limos & motor coaches. Available 24/7 for Boston airport transfers, corporate & events.",
   alternates: { canonical: `${SITE_URL}/fleet/` },
   openGraph: {
     type: 'website',

@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { motion, useReducedMotion } from 'framer-motion'
-import { ArrowRight, Shield, Clock, Star, Phone, Plane, Briefcase, Heart, MapPin } from 'lucide-react'
+import { ArrowRight, Shield, Clock, Star, Phone, Plane, Briefcase, Heart, MapPin, ChevronDown } from 'lucide-react'
 import { PageTransition } from '@/components/motion/PageTransition'
 import { RevealOnScroll } from '@/components/motion/RevealOnScroll'
 import { StaggerChildren, StaggerItem } from '@/components/motion/StaggerChildren'
@@ -19,10 +19,10 @@ const featuredVehicles = [
 const featuredReviews = reviews.slice(0, 3)
 
 const coreServices = [
-  { icon: Plane, title: 'Airport Transfers', desc: 'Logan, Manchester & T.F. Green with real-time flight tracking.', href: '/services/airport' },
-  { icon: Briefcase, title: 'Corporate Travel', desc: 'Executive accounts, invoicing, and on-demand fleet availability.', href: '/services/corporate' },
-  { icon: Heart, title: 'Weddings & Events', desc: 'Impeccable coordination for your most important day.', href: '/services/weddings' },
-  { icon: MapPin, title: 'Roadshows & Tours', desc: 'Full-day charters throughout New England and beyond.', href: '/services/roadshows' },
+  { icon: Plane, title: 'Airport Transfers', desc: 'Logan, Manchester & T.F. Green with real-time flight tracking.', href: '/services/airport-transfers/' },
+  { icon: Briefcase, title: 'Corporate Travel', desc: 'Executive accounts, invoicing, and on-demand fleet availability.', href: '/services/corporate-car-service/' },
+  { icon: Heart, title: 'Weddings & Events', desc: 'Impeccable coordination for your most important day.', href: '/services/wedding-transportation/' },
+  { icon: MapPin, title: 'Roadshows & Tours', desc: 'Full-day charters throughout New England and beyond.', href: '/services/roadshows/' },
 ]
 
 const trustMarkers = [
@@ -35,7 +35,7 @@ const trustMarkers = [
 function HeroSection() {
   const prefersReducedMotion = useReducedMotion()
 
-  const titleWords = ['Arrive.', 'Distinguished.']
+  const taglineWords = ['Arrive.', 'Distinguished.']
 
   return (
     <section className="relative h-screen min-h-[700px] flex items-center overflow-hidden">
@@ -54,11 +54,6 @@ function HeroSection() {
       {/* Content */}
       <div className="relative z-10 section-padding w-full">
         <div className="max-w-3xl">
-          {/* Keyword-rich H1 for search engines — visually hidden, preserved for screen readers */}
-          <h1 className="sr-only">
-            Boston&apos;s Premier Chauffeured Transportation Service | Airport Transfers, Corporate Travel &amp; Wedding Car Service | Greater Boston Livery
-          </h1>
-
           {/* Label */}
           <motion.p
             className="label-sm mb-6 !text-silver/70"
@@ -69,9 +64,19 @@ function HeroSection() {
             Greater Boston&apos;s Premier Chauffeured Service
           </motion.p>
 
-          {/* Visual display heading — aria-hidden since the sr-only H1 above carries semantic meaning */}
-          <p aria-hidden="true" className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-cream font-medium leading-none mb-4">
-            {titleWords.map((word, wi) => (
+          {/* Keyword-rich H1 — visible, styled subtler */}
+          <motion.h1
+            className="font-display text-lg sm:text-xl md:text-2xl text-cream/80 font-medium tracking-wide mb-4"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            Boston&apos;s Premier Limo &amp; Airport Car Service
+          </motion.h1>
+
+          {/* Decorative tagline as H2 — large, dramatic */}
+          <h2 aria-hidden="true" className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-cream font-medium leading-none mb-4">
+            {taglineWords.map((word, wi) => (
               <span key={word} className="block overflow-hidden pb-4">
                 <motion.span
                   className="block"
@@ -91,7 +96,7 @@ function HeroSection() {
                 </motion.span>
               </span>
             ))}
-          </p>
+          </h2>
 
           {/* Subheading */}
           <motion.p
@@ -141,6 +146,98 @@ function HeroSection() {
           transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
         />
       </motion.div>
+    </section>
+  )
+}
+
+const serviceAreaCities = [
+  { name: 'Cambridge', slug: 'cambridge' },
+  { name: 'Newton', slug: 'newton' },
+  { name: 'Brookline', slug: 'brookline' },
+  { name: 'Lexington', slug: 'lexington' },
+  { name: 'Wellesley', slug: 'wellesley' },
+  { name: 'Quincy', slug: 'quincy' },
+  { name: 'Hingham', slug: 'hingham' },
+  { name: 'Duxbury', slug: 'duxbury' },
+]
+
+const homepageFaqItems = [
+  {
+    question: 'What is a livery service?',
+    answer: 'A livery service provides pre-booked, chauffeured transportation in luxury vehicles. Unlike taxis or rideshares, livery services operate on a reservation basis with professional chauffeurs, fixed pricing, and premium vehicles — ideal for airport transfers, corporate travel, and special events.',
+  },
+  {
+    question: 'How do I book a ride to Logan Airport?',
+    answer: 'You can book online through our reservation system or call us at (855) 425-4661. Provide your pickup address, flight details, and preferred vehicle. We will confirm your booking and send your chauffeur details before the trip.',
+  },
+  {
+    question: 'What airports do you serve?',
+    answer: 'We serve Logan International Airport (BOS), Manchester-Boston Regional Airport (MHT), and T.F. Green Airport (PVD). Service to other regional airports is available on request.',
+  },
+  {
+    question: 'Is gratuity included in the fare?',
+    answer: 'Gratuity is not included in the base fare. Tipping is at your discretion and can be added at the time of payment. Many corporate accounts choose to include a standard gratuity as part of their billing arrangement.',
+  },
+]
+
+function ServiceAreasSection() {
+  return (
+    <section className="section-padding py-20 bg-navy">
+      <RevealOnScroll>
+        <p className="label-sm mb-4">Where We Serve</p>
+        <div className="flex items-end justify-between mb-12">
+          <h2 className="heading-lg text-cream max-w-md">
+            We Serve These Areas
+          </h2>
+          <Link href="/locations/" className="btn-ghost hidden md:flex">
+            All Locations <ArrowRight size={14} />
+          </Link>
+        </div>
+      </RevealOnScroll>
+      <StaggerChildren className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {serviceAreaCities.map(({ name, slug }) => (
+          <StaggerItem key={slug}>
+            <Link
+              href={`/${slug}/`}
+              className="block p-6 border border-white/10 hover:border-gold/40 transition-colors group"
+            >
+              <span className="font-display text-lg text-cream group-hover:text-gold transition-colors">
+                {name}
+              </span>
+              <span className="block font-body text-xs text-silver/40 mt-1">MA</span>
+            </Link>
+          </StaggerItem>
+        ))}
+      </StaggerChildren>
+      <div className="mt-8 md:hidden">
+        <Link href="/locations/" className="btn-ghost">
+          All Locations <ArrowRight size={14} />
+        </Link>
+      </div>
+    </section>
+  )
+}
+
+function HomeFaqSection() {
+  return (
+    <section className="section-padding py-20 bg-cream">
+      <RevealOnScroll>
+        <p className="label-sm mb-4">Common Questions</p>
+        <h2 className="heading-lg mb-12">Frequently Asked Questions</h2>
+      </RevealOnScroll>
+      <div className="max-w-3xl space-y-0 border-t border-silver">
+        {homepageFaqItems.map((faq) => (
+          <details key={faq.question} className="group border-b border-silver">
+            <summary className="flex items-center justify-between cursor-pointer py-6 font-display text-base text-navy group-open:text-gold transition-colors">
+              {faq.question}
+              <ChevronDown size={16} className="text-navy/40 group-open:rotate-180 transition-transform" />
+            </summary>
+            <p className="font-body text-sm text-navy/60 leading-relaxed pb-6 pr-8">
+              {faq.answer}
+            </p>
+          </details>
+        ))}
+      </div>
     </section>
   )
 }
@@ -319,6 +416,8 @@ export function HomeContent() {
         </StaggerChildren>
       </section>
 
+      <ServiceAreasSection />
+
       {/* Final CTA */}
       <section className="section-padding py-24 bg-cream text-center">
         <RevealOnScroll>
@@ -345,6 +444,8 @@ export function HomeContent() {
           </div>
         </RevealOnScroll>
       </section>
+
+      <HomeFaqSection />
     </PageTransition>
   )
 }
