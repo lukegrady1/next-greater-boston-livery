@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Script from 'next/script'
 import { Playfair_Display, Inter } from 'next/font/google'
 import { Navbar } from '@/components/layout/Navbar'
+import { TrackingEvents } from '@/components/analytics/TrackingEvents'
 import { Footer } from '@/components/layout/Footer'
 import { ScrollToTop } from '@/components/layout/ScrollToTop'
 import { NoiseOverlay } from './noise-overlay'
@@ -93,6 +94,7 @@ export default function RootLayout({
           <ScrollToTop />
           <NoiseOverlay />
           <ClientProviders />
+          <TrackingEvents />
           <Navbar />
           <main>{children}</main>
           <Footer />
