@@ -102,15 +102,19 @@ function HeroSection() {
 }
 
 function TrustStrip() {
+  // Repeat the badge set so it always overflows the viewport — badges stay packed
+  // close together with no large empty gaps, so something is visible at all times.
+  const repeatedMarkers = Array.from({ length: 3 }).flatMap(() => trustMarkers)
+
   // Two identical groups so the CSS marquee loops seamlessly; the second is
   // aria-hidden (decorative duplicate) and removed under prefers-reduced-motion.
   const group = (ariaHidden: boolean) => (
     <div className="marquee__group" aria-hidden={ariaHidden || undefined}>
-      {trustMarkers.map(({ icon: Icon, label }) => (
-        <div key={label} className="flex items-center gap-3 px-6 md:px-10 whitespace-nowrap">
+      {repeatedMarkers.map(({ icon: Icon, label }, i) => (
+        <div key={`${i}-${label}`} className="flex items-center gap-2.5 px-4 md:px-6 whitespace-nowrap">
           <Icon size={16} className="text-gold flex-shrink-0" />
           <span className="font-body text-sm text-silver/80">{label}</span>
-          <span aria-hidden="true" className="text-gold/40 pl-6 md:pl-10">&middot;</span>
+          <span aria-hidden="true" className="text-gold/40 pl-4 md:pl-6">&middot;</span>
         </div>
       ))}
     </div>

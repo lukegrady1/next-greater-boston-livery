@@ -146,12 +146,13 @@ export function FleetContent() {
     <PageTransition>
       {/* Hero */}
       <section className="bg-navy pt-40 pb-20 section-padding relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&q=60"
+            src="/boston.webp"
             alt=""
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover opacity-25"
           />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/80 to-navy/40" />
         </div>
         <div className="relative z-10">
           <RevealOnScroll>

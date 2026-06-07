@@ -47,13 +47,17 @@ export function Navbar() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       >
         <div className="section-padding flex items-center justify-between h-24 lg:h-28">
-          {/* Logo — scrolls back to top when already on the home page */}
+          {/* Logo — closes the mobile menu and, when already on home, scrolls back to top */}
           <Link
             href="/"
             className="flex items-center"
             onClick={(e) => {
-              if (pathname === '/') {
-                e.preventDefault()
+              const onHome = pathname === '/'
+              const wasMenuOpen = menuOpen
+              if (onHome) e.preventDefault()
+              setMenuOpen(false)
+              if (!onHome) return
+              const scrollUp = () => {
                 const lenis = getLenis()
                 if (lenis) {
                   lenis.scrollTo(0)
@@ -61,6 +65,9 @@ export function Navbar() {
                   window.scrollTo({ top: 0, behavior: 'smooth' })
                 }
               }
+              // If the menu was open, wait for it to release the body scroll lock first
+              if (wasMenuOpen) setTimeout(scrollUp, 60)
+              else scrollUp()
             }}
           >
             <img
