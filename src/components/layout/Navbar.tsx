@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Phone } from 'lucide-react'
 import { cn } from '@/utils/cn'
 import { useScrolled } from '@/hooks/useScrolled'
+import { getLenis } from '@/hooks/useLenis'
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -45,26 +46,40 @@ export function Navbar() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       >
-        <div className="section-padding flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link href="/" className="flex items-center">
+        <div className="section-padding flex items-center justify-between h-24 lg:h-28">
+          {/* Logo — scrolls back to top when already on the home page */}
+          <Link
+            href="/"
+            className="flex items-center"
+            onClick={(e) => {
+              if (pathname === '/') {
+                e.preventDefault()
+                const lenis = getLenis()
+                if (lenis) {
+                  lenis.scrollTo(0)
+                } else {
+                  window.scrollTo({ top: 0, behavior: 'smooth' })
+                }
+              }
+            }}
+          >
             <img
               src="/gbl_logo.webp"
               alt="Greater Boston Livery"
               width={243}
               height={134}
-              className="h-16 w-auto object-contain"
+              className="h-20 lg:h-[88px] w-auto object-contain"
             />
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-10">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  'font-body text-sm tracking-wide transition-colors duration-200 relative group',
+                  'font-body text-[15px] tracking-wide transition-colors duration-200 relative group',
                   pathname === link.href
                     ? 'text-gold'
                     : 'text-navy/60 hover:text-navy'
@@ -80,19 +95,19 @@ export function Navbar() {
           </nav>
 
           {/* Right actions */}
-          <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-5">
             <a
               href="tel:+18554254661"
-              className="flex items-center gap-2 text-navy/50 hover:text-gold transition-colors text-sm font-body"
+              className="flex items-center gap-2 text-navy/50 hover:text-gold transition-colors text-[15px] font-body"
             >
-              <Phone size={14} />
+              <Phone size={15} />
               <span>(855) 425-4661</span>
             </a>
             <a
               href="https://customer.moovs.app/greater-boston-coach/request/new"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary text-xs py-2.5 px-6"
+              className="btn-primary text-xs py-3 px-7"
             >
               Book Now
             </a>

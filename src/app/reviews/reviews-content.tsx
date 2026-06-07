@@ -15,32 +15,22 @@ export function ReviewsContent() {
       {/* Hero */}
       <section className="bg-navy pt-40 pb-20 section-padding">
         <RevealOnScroll>
-          <p className="label-sm mb-4 !text-cream">Testimonials</p>
-          <h1 className="heading-display text-cream max-w-2xl">
-            Trusted by Boston&apos;s<br />
-            <span className="gold-gradient">Most Discerning Clients</span>
+          <h1 className="heading-display text-cream max-w-3xl">
+            <span className="block">Boston Limo &amp; Car Service</span>
+            <span className="block gold-gradient">Reviews</span>
           </h1>
         </RevealOnScroll>
 
         {/* Rating summary */}
-        <RevealOnScroll delay={0.2} className="mt-12 flex flex-wrap items-center gap-8">
-          <div className="flex items-center gap-4">
-            <span className="font-display text-6xl text-gold">{avgRating}</span>
-            <div>
-              <div className="flex gap-1 mb-1">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} size={18} className="fill-gold text-gold" />
-                ))}
-              </div>
-              <p className="font-body text-silver/50 text-sm">{reviews.length} verified reviews</p>
+        <RevealOnScroll delay={0.2} className="mt-10 flex items-center gap-4">
+          <span className="font-display text-6xl text-gold">{avgRating}</span>
+          <div>
+            <div className="flex gap-1 mb-1">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star key={i} size={18} className="fill-gold text-gold" />
+              ))}
             </div>
-          </div>
-
-          <div className="h-12 w-px bg-white/10 hidden md:block" />
-
-          <div className="font-body text-silver/40 text-sm">
-            <p>Reviews sourced from Yelp and direct client feedback.</p>
-            <p>Attributed with client permission as First Name + Last Initial.</p>
+            <p className="font-body text-silver/50 text-sm">{reviews.length} verified reviews · sourced from Yelp &amp; direct client feedback</p>
           </div>
         </RevealOnScroll>
       </section>

@@ -19,10 +19,16 @@ export const metadata: Metadata = {
     type: 'website',
     url: `${SITE_URL}/`,
     title: 'Boston Limo & Airport Car Service | Greater Boston Livery',
-    description: 'Premier limo and airport car service for corporate travel, weddings, and airport transfers throughout Greater Boston and New England.',
+    description: 'Top-rated limo and airport car service for corporate travel, weddings, and airport transfers throughout Greater Boston and New England.',
     images: [{ url: OG_IMAGE_URL, width: 1200, height: 630 }],
     siteName: 'Greater Boston Livery',
     locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Boston Limo & Airport Car Service | Greater Boston Livery',
+    description: 'Top-rated limo and airport car service for corporate travel, weddings, and airport transfers throughout Greater Boston and New England.',
+    images: [OG_IMAGE_URL],
   },
 }
 

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { getLenis } from '@/hooks/useLenis'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Check, Wifi, Users, Wine } from 'lucide-react'
@@ -113,9 +113,19 @@ function VehicleDetailCard({ vehicle }: { vehicle: Vehicle }) {
   )
 }
 
+const VALID_CATEGORIES = categories.map((c) => c.value)
+
 export function FleetContent() {
   const [active, setActive] = useState<Category>('all')
   const gridRef = useRef<HTMLElement>(null)
+
+  // Pre-select the filter when arriving via /fleet/?category=… (e.g. footer links).
+  useEffect(() => {
+    const param = new URLSearchParams(window.location.search).get('category')
+    if (param && VALID_CATEGORIES.includes(param as Category)) {
+      setActive(param as Category)
+    }
+  }, [])
 
   function selectCategory(value: Category) {
     setActive(value)
@@ -145,16 +155,12 @@ export function FleetContent() {
         </div>
         <div className="relative z-10">
           <RevealOnScroll>
-            <p className="label-sm mb-4 !text-cream">The Fleet</p>
-            <h1 className="font-display text-lg sm:text-xl text-cream font-medium tracking-wide mb-4">
-              Luxury Fleet: Sedans, SUVs, Sprinters &amp; Limos in Boston
+            <h1 className="heading-display text-cream max-w-3xl">
+              <span className="block">Boston&apos;s Luxury Fleet —</span>
+              <span className="block gold-gradient">Sedans, SUVs &amp; Limos</span>
             </h1>
-            <h2 className="heading-display text-cream max-w-2xl">
-              Vehicles Worthy of<br />
-              <span className="gold-gradient">Your Journey</span>
-            </h2>
             <p className="font-body text-silver/60 mt-6 max-w-xl leading-relaxed">
-              From executive sedans to 55-passenger motor coaches, our diverse fleet is meticulously maintained and ready for any occasion.
+              From executive sedans to 55-passenger motor coaches — meticulously maintained and ready for any occasion.
             </p>
           </RevealOnScroll>
         </div>
@@ -187,6 +193,7 @@ export function FleetContent() {
         <AnimatePresence mode="wait">
           <StaggerChildren
             key={active}
+            animateOnMount
             className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6"
           >
             {filtered.map((vehicle) => (

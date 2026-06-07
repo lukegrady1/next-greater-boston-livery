@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { motion, useReducedMotion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { ArrowRight, Shield, Clock, Star, Phone, Plane, Briefcase, Heart, MapPin, ChevronDown } from 'lucide-react'
 import { PageTransition } from '@/components/motion/PageTransition'
 import { RevealOnScroll } from '@/components/motion/RevealOnScroll'
@@ -33,12 +33,8 @@ const trustMarkers = [
 ]
 
 function HeroSection() {
-  const prefersReducedMotion = useReducedMotion()
-
-  const taglineWords = ['Arrive.', 'Distinguished.']
-
   return (
-    <section className="relative h-screen min-h-[700px] flex items-center overflow-hidden">
+    <section className="relative h-screen min-h-[700px] flex flex-col overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0">
         <img
@@ -51,61 +47,28 @@ function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/60 via-transparent to-navy/30" />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 section-padding w-full">
-        <div className="max-w-3xl">
-          {/* Label */}
-          <motion.p
-            className="label-sm mb-6 !text-silver/70"
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            Greater Boston&apos;s Premier Chauffeured Service
-          </motion.p>
-
-          {/* Keyword-rich H1 — visible, styled subtler */}
+      {/* Content — vertically centered, with breathing room above the trust strip */}
+      <div className="relative z-10 section-padding w-full flex-1 flex items-center">
+        <div className="max-w-3xl py-16">
+          {/* Keyword-rich H1 — now the primary, dramatic headline */}
           <motion.h1
-            className="font-display text-lg sm:text-xl md:text-2xl text-cream/80 font-medium tracking-wide mb-4"
-            initial={{ opacity: 0, y: 16 }}
+            className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-cream font-medium leading-[1.05] mb-8"
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           >
-            Boston&apos;s Premier Limo &amp; Airport Car Service
+            Boston&apos;s Premier Limo &amp;{' '}
+            <span className="gold-gradient">Airport Car Service</span>
           </motion.h1>
-
-          {/* Decorative tagline as H2 — large, dramatic */}
-          <h2 aria-hidden="true" className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-cream font-medium leading-none mb-4">
-            {taglineWords.map((word, wi) => (
-              <span key={word} className="block overflow-hidden pb-4">
-                <motion.span
-                  className="block"
-                  initial={prefersReducedMotion ? { opacity: 0 } : { y: '110%' }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{
-                    duration: 0.8,
-                    delay: 0.4 + wi * 0.15,
-                    ease: [0.22, 1, 0.36, 1],
-                  }}
-                >
-                  {word === 'Distinguished.' ? (
-                    <span className="gold-gradient">{word}</span>
-                  ) : (
-                    word
-                  )}
-                </motion.span>
-              </span>
-            ))}
-          </h2>
 
           {/* Subheading */}
           <motion.p
-            className="font-body text-lg text-silver/70 max-w-xl leading-relaxed mt-8 mb-10"
+            className="font-body text-lg text-silver/70 max-w-xl leading-relaxed mb-10"
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.9 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
           >
-            Chauffeured luxury transportation for corporate executives, weddings, and special occasions — serving Greater Boston, Cape Cod, the South Shore, North Shore, and beyond to New York City. Available 24/7/365.
+            Chauffeured luxury for executives, weddings, and airport transfers — Greater Boston to New York City, available 24/7/365.
           </motion.p>
 
           {/* CTAs */}
@@ -113,7 +76,7 @@ function HeroSection() {
             className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4"
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.1 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
           >
             <a
               href="https://customer.moovs.app/greater-boston-coach/request/new"
@@ -132,34 +95,38 @@ function HeroSection() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-2"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.6 }}
-      >
-        <p className="label-sm text-silver/30">Scroll</p>
-        <motion.div
-          className="w-px h-12 bg-gradient-to-b from-gold to-transparent"
-          animate={{ scaleY: [0, 1, 0], originY: 'top' }}
-          transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
-        />
-      </motion.div>
+      {/* Sliding trust strip (marquee) — full-bleed ticker at the base of the hero */}
+      <TrustStrip />
     </section>
   )
 }
 
-const serviceAreaCities = [
-  { name: 'Cambridge', slug: 'cambridge' },
-  { name: 'Newton', slug: 'newton' },
-  { name: 'Brookline', slug: 'brookline' },
-  { name: 'Lexington', slug: 'lexington' },
-  { name: 'Wellesley', slug: 'wellesley' },
-  { name: 'Quincy', slug: 'quincy' },
-  { name: 'Hingham', slug: 'hingham' },
-  { name: 'Duxbury', slug: 'duxbury' },
-]
+function TrustStrip() {
+  // Two identical groups so the CSS marquee loops seamlessly; the second is
+  // aria-hidden (decorative duplicate) and removed under prefers-reduced-motion.
+  const group = (ariaHidden: boolean) => (
+    <div className="marquee__group" aria-hidden={ariaHidden || undefined}>
+      {trustMarkers.map(({ icon: Icon, label }) => (
+        <div key={label} className="flex items-center gap-3 px-6 md:px-10 whitespace-nowrap">
+          <Icon size={16} className="text-gold flex-shrink-0" />
+          <span className="font-body text-sm text-silver/80">{label}</span>
+          <span aria-hidden="true" className="text-gold/40 pl-6 md:pl-10">&middot;</span>
+        </div>
+      ))}
+    </div>
+  )
+
+  return (
+    <div className="relative z-10 w-full bg-navy/80 backdrop-blur-sm border-t border-white/10 py-4">
+      <div className="marquee">
+        <div className="marquee__track">
+          {group(false)}
+          {group(true)}
+        </div>
+      </div>
+    </div>
+  )
+}
 
 const homepageFaqItems = [
   {
@@ -185,35 +152,14 @@ function ServiceAreasSection() {
     <section className="section-padding py-20 bg-navy">
       <RevealOnScroll>
         <p className="label-sm mb-4">Where We Serve</p>
-        <div className="flex items-end justify-between mb-12">
-          <h2 className="heading-lg text-cream max-w-md">
-            We Serve These Areas
-          </h2>
-          <Link href="/locations/" className="btn-ghost hidden md:flex">
-            All Locations <ArrowRight size={14} />
-          </Link>
-        </div>
+        <h2 className="heading-lg text-cream max-w-2xl mb-8">
+          We Serve These Areas
+        </h2>
+        <p className="font-body text-lg text-silver/70 max-w-3xl leading-relaxed">
+          Serving Greater Boston, Cape Cod, the South Shore, the North Shore, and New York City
+          — plus service throughout New England.
+        </p>
       </RevealOnScroll>
-      <StaggerChildren className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {serviceAreaCities.map(({ name, slug }) => (
-          <StaggerItem key={slug}>
-            <Link
-              href={`/${slug}/`}
-              className="block p-6 border border-white/10 hover:border-gold/40 transition-colors group"
-            >
-              <span className="font-display text-lg text-cream group-hover:text-gold transition-colors">
-                {name}
-              </span>
-              <span className="block font-body text-xs text-silver/40 mt-1">MA</span>
-            </Link>
-          </StaggerItem>
-        ))}
-      </StaggerChildren>
-      <div className="mt-8 md:hidden">
-        <Link href="/locations/" className="btn-ghost">
-          All Locations <ArrowRight size={14} />
-        </Link>
-      </div>
     </section>
   )
 }
@@ -247,30 +193,14 @@ export function HomeContent() {
     <PageTransition>
       <HeroSection />
 
-      {/* Trust Markers */}
-      <section className="bg-navy border-b border-white/5">
-        <div className="section-padding py-8">
-          <StaggerChildren className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {trustMarkers.map(({ icon: Icon, label }) => (
-              <StaggerItem key={label}>
-                <div className="flex items-center gap-3">
-                  <Icon size={18} className="text-gold flex-shrink-0" />
-                  <span className="font-body text-sm text-silver/70">{label}</span>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerChildren>
-        </div>
-      </section>
-
       {/* Core Services */}
       <section className="section-padding py-28 bg-cream">
         <RevealOnScroll>
           <p className="label-sm mb-4">What We Offer</p>
           <div className="flex items-end justify-between mb-16">
             <h2 className="heading-lg max-w-md">
-              Precision. Discretion.<br />
-              <span className="gold-gradient">White-Glove Service.</span>
+              <span className="block">Precision. Discretion.</span>
+              <span className="block gold-gradient">White-Glove Service.</span>
             </h2>
             <Link href="/services" className="btn-ghost hidden md:flex">
               All Services <ArrowRight size={14} />
@@ -316,8 +246,8 @@ export function HomeContent() {
           <RevealOnScroll direction="left">
             <p className="label-sm mb-6">Our Story</p>
             <h2 className="heading-lg text-cream mb-6">
-              Serving Greater Boston &amp; Beyond<br />
-              <span className="gold-gradient">Since 2013</span>
+              <span className="block">Serving Greater Boston &amp; Beyond</span>
+              <span className="block gold-gradient">Since 2013</span>
             </h2>
             <div className="divider-gold mb-8" />
             <div className="space-y-4 font-body text-silver/60 leading-relaxed">
@@ -368,7 +298,8 @@ export function HomeContent() {
           <p className="label-sm mb-4">The Fleet</p>
           <div className="flex items-end justify-between mb-12">
             <h2 className="heading-lg">
-              Curated for the<br />Discerning Traveler
+              <span className="block">Curated for the</span>
+              <span className="block">Discerning Traveler</span>
             </h2>
             <Link href="/fleet" className="btn-ghost hidden md:flex">
               View Full Fleet <ArrowRight size={14} />

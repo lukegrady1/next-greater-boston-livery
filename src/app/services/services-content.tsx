@@ -124,16 +124,12 @@ export function ServicesContent() {
         </div>
         <div className="relative z-10">
           <RevealOnScroll>
-            <p className="label-sm mb-4 !text-cream">What We Offer</p>
-            <h1 className="font-display text-lg sm:text-xl text-cream font-medium tracking-wide mb-4">
-              Boston Airport Transfers, Corporate &amp; Wedding Car Service
+            <h1 className="heading-display text-cream max-w-3xl">
+              <span className="block">Boston Airport, Corporate</span>
+              <span className="block gold-gradient">&amp; Wedding Car Service</span>
             </h1>
-            <h2 className="heading-display text-cream max-w-2xl">
-              Every Journey.<br />
-              <span className="gold-gradient">Executed Flawlessly.</span>
-            </h2>
             <p className="font-body text-silver/60 mt-6 max-w-xl leading-relaxed">
-              From early morning airport runs to multi-day executive roadshows, we have the expertise, fleet, and professionalism to exceed expectations.
+              From early morning airport runs to multi-day executive roadshows — handled with the expertise and professionalism Boston expects.
             </p>
           </RevealOnScroll>
         </div>
@@ -154,7 +150,7 @@ export function ServicesContent() {
           <h2 className="heading-lg text-cream mb-4">Ready to experience the difference?</h2>
           <p className="font-body text-silver/60 mb-8 max-w-lg mx-auto">Contact us today to discuss your transportation needs and receive a custom quote.</p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <a href="https://customer.moovs.app/greater-boston-coach/request/new" target="_blank" rel="noopener noreferrer" className="btn-primary">Request a Quote</a>
+            <a href="https://customer.moovs.app/greater-boston-coach/request/new" target="_blank" rel="noopener noreferrer" className="btn-primary">Book Now</a>
             <a href="tel:+18554254661" className="btn-outline">(855) 425-4661</a>
           </div>
         </RevealOnScroll>

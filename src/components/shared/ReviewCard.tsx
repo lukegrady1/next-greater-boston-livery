@@ -31,11 +31,27 @@ export function ReviewCard({ review }: ReviewCardProps) {
           )}
         </div>
         <div className="text-right">
-          <p className="font-body text-xs text-navy/40">{review.date}</p>
-          <div className="flex items-center justify-end gap-1 mt-1">
-            <div className="w-1.5 h-1.5 rounded-full bg-gold" />
-            <p className="text-xs font-body text-gold font-medium">Verified</p>
-          </div>
+          {review.date && <p className="font-body text-xs text-navy/40">{review.date}</p>}
+          {review.sourceUrl ? (
+            <a
+              href={review.sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-end gap-1 mt-1 hover:opacity-80 transition-opacity"
+            >
+              <div className="w-1.5 h-1.5 rounded-full bg-gold" />
+              <p className="text-xs font-body text-gold font-medium">
+                Verified{review.source ? ` · ${review.source}` : ''}
+              </p>
+            </a>
+          ) : (
+            <div className="flex items-center justify-end gap-1 mt-1">
+              <div className="w-1.5 h-1.5 rounded-full bg-gold" />
+              <p className="text-xs font-body text-gold font-medium">
+                Verified{review.source ? ` · ${review.source}` : ''}
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </div>

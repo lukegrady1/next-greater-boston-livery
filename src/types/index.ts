@@ -30,6 +30,10 @@ export interface Review {
   date: string
   text: string
   service?: string
+  /** Source platform, e.g. 'Yelp' or 'Google'. */
+  source?: string
+  /** Public URL to the original review, if available — makes the "Verified" badge a link. */
+  sourceUrl?: string
 }
 
 export interface BookingStep {

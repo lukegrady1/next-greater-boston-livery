@@ -27,10 +27,9 @@ export function TeamContent() {
         </div>
         <div className="relative z-10">
           <RevealOnScroll>
-            <p className="label-sm mb-4 !text-cream">The People Behind the Service</p>
-            <h1 className="heading-display text-cream max-w-2xl">
-              Meet the<br />
-              <span className="gold-gradient">Team</span>
+            <h1 className="heading-display text-cream max-w-3xl">
+              <span className="block">Meet the Team Behind</span>
+              <span className="block gold-gradient">Greater Boston Livery</span>
             </h1>
             <p className="font-body text-silver/60 mt-6 max-w-xl leading-relaxed">
               Every great ride starts with great people. Our team is built on a culture of professionalism, discretion, and genuine care for every client we serve.

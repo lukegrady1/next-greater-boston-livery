@@ -8,6 +8,12 @@ interface StaggerChildrenProps {
   className?: string
   staggerDelay?: number
   containerDelay?: number
+  /**
+   * Animate immediately on mount instead of when scrolled into view.
+   * Use for content that can remount in-place (e.g. a filtered grid), where
+   * `whileInView` wouldn't re-fire because the element is already in view.
+   */
+  animateOnMount?: boolean
 }
 
 export function StaggerChildren({
@@ -15,15 +21,19 @@ export function StaggerChildren({
   className,
   staggerDelay = 0.1,
   containerDelay = 0,
+  animateOnMount = false,
 }: StaggerChildrenProps) {
   const prefersReducedMotion = useReducedMotion()
+
+  const animationProps = animateOnMount
+    ? { animate: 'visible' as const }
+    : { whileInView: 'visible' as const, viewport: { once: true, margin: '-60px' } }
 
   return (
     <motion.div
       className={className}
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: '-60px' }}
+      {...animationProps}
       variants={{
         hidden: {},
         visible: {
